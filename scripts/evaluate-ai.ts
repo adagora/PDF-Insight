@@ -3,7 +3,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { parseArgs, parseEnv } from "node:util";
 
-import { AnalyzeRequestSchema, parseAnalysis } from "@pdf-insight/shared";
+import { AnalyzeRequestSchema, ApiErrorSchema, parseAnalysis } from "@pdf-insight/shared";
 import { z } from "zod";
 
 import { createApp } from "../apps/api/src/app";
@@ -52,7 +52,9 @@ for (const entry of cases) {
     { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(entry.request) },
     { ...credentials, GEMINI_MODEL: options.model, GEMINI_FALLBACK_MODEL: "" },
   );
-  const parsed = parseAnalysis(await response.json());
+  const body: unknown = await response.json();
+  const parsed = parseAnalysis(body);
+  const error = ApiErrorSchema.safeParse(body);
   const checks = {
     http200: response.status === 200,
     schema: parsed.ok,
@@ -97,6 +99,9 @@ for (const entry of cases) {
   const sample = {
     name: entry.name,
     model: options.model,
+    status: response.status,
+    errorCode: error.success ? error.data.error.code : null,
+    sourceChars: entry.request.pages.reduce((total, page) => total + page.text.length, 0),
     ms: performance.now() - start,
     checks,
     passed: Object.values(checks).every(Boolean),

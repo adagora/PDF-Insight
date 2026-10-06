@@ -10,6 +10,10 @@ describe("summary sentence boundaries (ADR-0020)", () => {
     ["pl", "Acme S.A. podpisała umowę. Prof. Kowalski nadzoruje projekt. Cena to 10 zł."],
     ["en", "Dr. Smith signed the agreement. It costs USD 12.50. The term is one year."],
     ["de", "Die Rechnung beträgt 12,50 EUR. Die Zahlung ist am 12.03.2026 fällig. Es gibt keine weiteren Gebühren."],
+    [
+      "de",
+      "Der Bericht der Beispiel GmbH stammt vom 31. Juli 2026. Er nennt 135 Anfragen. Die Zufriedenheit beträgt 92 Prozent.",
+    ],
     ["fr", "Mme. Dupont a signé le contrat. Le montant est de 12,50 EUR. La durée est d’un an."],
     ["ja", "契約期間は一年です。料金は100円です。追加料金はありません。"],
     ["zh", "合同期限为一年。费用为100元。没有额外费用。"],
@@ -20,6 +24,23 @@ describe("summary sentence boundaries (ADR-0020)", () => {
 
   it("does not treat punctuation-only entries as sentences", () => {
     expect(countSentences("... !!!", "pl")).toBe(0);
+  });
+
+  it.each([
+    "Januar",
+    "Februar",
+    "März",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember",
+  ])("keeps German ordinal dates together for %s without hiding a following sentence", (month) => {
+    expect(countSentences(`Der Termin ist der 1. ${month} 2026. Die Zahlung ist fällig.`, "de")).toBe(2);
   });
 
   it("completes unpunctuated entries without changing non-Latin punctuation", () => {
