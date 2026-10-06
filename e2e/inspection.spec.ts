@@ -7,6 +7,7 @@ import { PDFDocument, PDFHexString, PDFName, PDFDict, PDFArray } from "pdf-lib";
 import { prepareZXingModule, writeBarcode } from "zxing-wasm/writer";
 
 import { SAMPLE_PDF, analysisFixture, makePdf } from "./fixtures";
+import { inspectPdfObjects } from "../apps/web/src/lib/pdf-object-inspection";
 
 const SECRET = "AKIA" + "A".repeat(16);
 const ANALYZE = "**/v1/analyze";
@@ -200,7 +201,7 @@ for (const location of ["associated", "annotation"] as const) {
   });
 }
 
-test("inspects an inline image at original resolution when its rendered size is unreadable", async ({ page }) => {
+test("inspects an inline image at original resolution when its rendered size is unreadable", async ({ page }, info) => {
   test.setTimeout(120_000);
   const png = await screenshotBytes(page);
   const data = await page.evaluate(async (base64) => {
@@ -236,7 +237,10 @@ test("inspects an inline image at original resolution when its rendered size is 
     requests.push(AnalyzeRequestSchema.parse(route.request().postDataJSON()));
     await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(analysisFixture()) });
   });
-  await upload(page, await pdf.save());
+  const bytes = await pdf.save();
+  await info.attach("inline-image-fixture", { body: Buffer.from(bytes), contentType: "application/pdf" });
+  expect((await inspectPdfObjects(bytes)).images).toHaveLength(1);
+  await upload(page, bytes);
   await expect(page.locator(".result")).toBeVisible({ timeout: 90_000 });
   expect(requests[0]?.inspection?.images).toBe(1);
   expect(requests[0]?.inspection?.redactions.some((item) => item.kind === "aws-access-key-id")).toBe(true);
