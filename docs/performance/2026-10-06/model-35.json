@@ -1,0 +1,674 @@
+[
+  {
+    "run": 1,
+    "ms": 17773.47275,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 17693.865833,
+        "status": 200,
+        "responseBytes": 15095,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 1921,
+          "thoughtsTokenCount": 2514,
+          "totalTokenCount": 22134
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 150.885,
+    "cpuPercent": 0.8489337009279742,
+    "rssMiB": 99.609375,
+    "peakRssMiB": 99.734375,
+    "heapMiB": 19.352584838867188,
+    "model": "gemini-3.5-flash",
+    "amounts": 14,
+    "dates": 15,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 2,
+    "ms": 6882.497625,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6864.021709000001,
+        "status": 200,
+        "responseBytes": 5129,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 1495,
+          "totalTokenCount": 19198
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 27.604,
+    "cpuPercent": 0.4010753291033645,
+    "rssMiB": 90.40625,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 22.061141967773438,
+    "model": "gemini-3.5-flash",
+    "amounts": 9,
+    "dates": 10,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 3,
+    "ms": 13520.787165999998,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 13507.151582999999,
+        "status": 200,
+        "responseBytes": 11013,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 2044,
+          "thoughtsTokenCount": 1420,
+          "totalTokenCount": 21167
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 24.32,
+    "cpuPercent": 0.17987118428397578,
+    "rssMiB": 88.65625,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 26.397903442382812,
+    "model": "gemini-3.5-flash",
+    "amounts": 16,
+    "dates": 14,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 4,
+    "ms": 6386.091791000006,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6365.578874999999,
+        "status": 200,
+        "responseBytes": 4844,
+        "usage": {
+          "promptTokenCount": 17697,
+          "candidatesTokenCount": 1388,
+          "totalTokenCount": 19085
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 52.555,
+    "cpuPercent": 0.8229602974712386,
+    "rssMiB": 91.703125,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 18.67060089111328,
+    "model": "gemini-3.5-flash",
+    "amounts": 8,
+    "dates": 9,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 5,
+    "ms": 9735.829542,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 9709.539082999996,
+        "status": 200,
+        "responseBytes": 7439,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 2314,
+          "totalTokenCount": 20013
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 41.172,
+    "cpuPercent": 0.42289154532118245,
+    "rssMiB": 82.09375,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 21.76384735107422,
+    "model": "gemini-3.5-flash",
+    "amounts": 20,
+    "dates": 16,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 6,
+    "ms": 8560.200875000002,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 8543.173708000002,
+        "status": 200,
+        "responseBytes": 6654,
+        "usage": {
+          "promptTokenCount": 17707,
+          "candidatesTokenCount": 2023,
+          "totalTokenCount": 19730
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 22.28,
+    "cpuPercent": 0.260274266052197,
+    "rssMiB": 74.890625,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 20.435165405273438,
+    "model": "gemini-3.5-flash",
+    "amounts": 15,
+    "dates": 16,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 7,
+    "ms": 20933.561416999997,
+    "status": 502,
+    "valid": false,
+    "calls": [
+      {
+        "ms": 11796.902625000002,
+        "status": 200,
+        "responseBytes": 10644,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 1224,
+          "thoughtsTokenCount": 1748,
+          "totalTokenCount": 20677
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 9122.072084,
+        "status": 200,
+        "responseBytes": 7543,
+        "usage": {
+          "promptTokenCount": 17753,
+          "candidatesTokenCount": 1529,
+          "thoughtsTokenCount": 587,
+          "cachedContentTokenCount": 14528,
+          "totalTokenCount": 19869
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 23.715,
+    "cpuPercent": 0.11328698221766134,
+    "rssMiB": 76.234375,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 22.545166015625
+  },
+  {
+    "run": 8,
+    "ms": 13825.056584000005,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 13804.93299999999,
+        "status": 200,
+        "responseBytes": 11496,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 1130,
+          "thoughtsTokenCount": 2256,
+          "totalTokenCount": 21089
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 37.589,
+    "cpuPercent": 0.2718903880907254,
+    "rssMiB": 77.84375,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 24.755287170410156,
+    "model": "gemini-3.5-flash",
+    "amounts": 6,
+    "dates": 6,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 9,
+    "ms": 6484.483208000005,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6463.579041999998,
+        "status": 200,
+        "responseBytes": 4819,
+        "usage": {
+          "promptTokenCount": 17707,
+          "candidatesTokenCount": 1374,
+          "totalTokenCount": 19081
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 56.163,
+    "cpuPercent": 0.8661137394990993,
+    "rssMiB": 82.84375,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 20.941085815429688,
+    "model": "gemini-3.5-flash",
+    "amounts": 9,
+    "dates": 8,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 10,
+    "ms": 12436.07475,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 12421.245750000002,
+        "status": 200,
+        "responseBytes": 10122,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 1364,
+          "thoughtsTokenCount": 1654,
+          "totalTokenCount": 20717
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 19.283,
+    "cpuPercent": 0.15505696441716868,
+    "rssMiB": 83.5,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 20.98975372314453,
+    "model": "gemini-3.5-flash",
+    "amounts": 8,
+    "dates": 9,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 11,
+    "ms": 17408.739208000014,
+    "status": 502,
+    "valid": false,
+    "calls": [
+      {
+        "ms": 6309.818791999991,
+        "status": 200,
+        "responseBytes": 4903,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 1400,
+          "totalTokenCount": 19103
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 11084.25220799999,
+        "status": 200,
+        "responseBytes": 9535,
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 1384,
+          "thoughtsTokenCount": 1406,
+          "cachedContentTokenCount": 14527,
+          "totalTokenCount": 20541
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 30.169,
+    "cpuPercent": 0.1732980179640817,
+    "rssMiB": 71.453125,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 22.02936553955078
+  },
+  {
+    "run": 12,
+    "ms": 6487.227333000017,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6462.385167,
+        "status": 200,
+        "responseBytes": 4917,
+        "usage": {
+          "promptTokenCount": 17701,
+          "candidatesTokenCount": 1424,
+          "totalTokenCount": 19125
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 32.231,
+    "cpuPercent": 0.4968378375772871,
+    "rssMiB": 73.1875,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 24.00310516357422,
+    "model": "gemini-3.5-flash",
+    "amounts": 10,
+    "dates": 8,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 13,
+    "ms": 11054.747458000027,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 11029.596916999988,
+        "status": 200,
+        "responseBytes": 8500,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 2831,
+          "totalTokenCount": 20534
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 33.058,
+    "cpuPercent": 0.29903894345480325,
+    "rssMiB": 72.921875,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 23.761917114257812,
+    "model": "gemini-3.5-flash",
+    "amounts": 20,
+    "dates": 28,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 14,
+    "ms": 18058.19975,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6831.535917000001,
+        "status": 200,
+        "responseBytes": 5038,
+        "usage": {
+          "promptTokenCount": 17697,
+          "candidatesTokenCount": 1468,
+          "totalTokenCount": 19165
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 11202.79458299998,
+        "status": 200,
+        "responseBytes": 9142,
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 1623,
+          "thoughtsTokenCount": 1055,
+          "cachedContentTokenCount": 14527,
+          "totalTokenCount": 20423
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 40.653,
+    "cpuPercent": 0.2251221083098275,
+    "rssMiB": 69.390625,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 24.294662475585938,
+    "model": "gemini-3.5-flash",
+    "amounts": 10,
+    "dates": 12,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 15,
+    "ms": 5566.091000000015,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5546.251583000005,
+        "status": 200,
+        "responseBytes": 4203,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 1159,
+          "totalTokenCount": 18864
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 29.616,
+    "cpuPercent": 0.5320789760713563,
+    "rssMiB": 74.015625,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 27.13256072998047,
+    "model": "gemini-3.5-flash",
+    "amounts": 7,
+    "dates": 7,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 16,
+    "ms": 25149.753999999986,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 14463.139250000007,
+        "status": 200,
+        "responseBytes": 12696,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 1189,
+          "thoughtsTokenCount": 2414,
+          "totalTokenCount": 21302
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 10661.051333999989,
+        "status": 200,
+        "responseBytes": 8922,
+        "usage": {
+          "promptTokenCount": 17747,
+          "candidatesTokenCount": 1129,
+          "thoughtsTokenCount": 1366,
+          "cachedContentTokenCount": 14527,
+          "totalTokenCount": 20242
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 76.314,
+    "cpuPercent": 0.3034383556992249,
+    "rssMiB": 67.1875,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 20.60681915283203,
+    "model": "gemini-3.5-flash",
+    "amounts": 5,
+    "dates": 6,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 17,
+    "ms": 15406.877083,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5957.289333000022,
+        "status": 200,
+        "responseBytes": 4625,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 1324,
+          "totalTokenCount": 19027
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 9418.746959000011,
+        "status": 200,
+        "responseBytes": 7485,
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 1389,
+          "thoughtsTokenCount": 769,
+          "cachedContentTokenCount": 14527,
+          "totalTokenCount": 19909
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 46.154,
+    "cpuPercent": 0.29956752268067666,
+    "rssMiB": 67.78125,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 21.48810577392578,
+    "model": "gemini-3.5-flash",
+    "amounts": 9,
+    "dates": 9,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 18,
+    "ms": 8659.683292000002,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 8639.259625000006,
+        "status": 200,
+        "responseBytes": 6500,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 2041,
+          "totalTokenCount": 19744
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 30.153,
+    "cpuPercent": 0.348199801115775,
+    "rssMiB": 70.953125,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 23.214439392089844,
+    "model": "gemini-3.5-flash",
+    "amounts": 17,
+    "dates": 13,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 19,
+    "ms": 7008.634832999989,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6985.734665999975,
+        "status": 200,
+        "responseBytes": 5208,
+        "usage": {
+          "promptTokenCount": 17707,
+          "candidatesTokenCount": 1516,
+          "totalTokenCount": 19223
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 28.609,
+    "cpuPercent": 0.40819647023547595,
+    "rssMiB": 73.171875,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 24.423629760742188,
+    "model": "gemini-3.5-flash",
+    "amounts": 10,
+    "dates": 10,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 20,
+    "ms": 16619.792041000008,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6250.684416000004,
+        "status": 200,
+        "responseBytes": 4530,
+        "usage": {
+          "promptTokenCount": 17695,
+          "candidatesTokenCount": 1294,
+          "totalTokenCount": 18989
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 10346.697207999998,
+        "status": 200,
+        "responseBytes": 8462,
+        "usage": {
+          "promptTokenCount": 17762,
+          "candidatesTokenCount": 1177,
+          "thoughtsTokenCount": 1221,
+          "cachedContentTokenCount": 14528,
+          "totalTokenCount": 20160
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 32.967,
+    "cpuPercent": 0.1983598827149728,
+    "rssMiB": 68.359375,
+    "peakRssMiB": 99.78125,
+    "heapMiB": 25.56360626220703,
+    "model": "gemini-3.5-flash",
+    "amounts": 8,
+    "dates": 6,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  }
+]

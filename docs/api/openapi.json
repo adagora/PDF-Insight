@@ -1,0 +1,941 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PDF Insight API",
+    "version": "0.1.0",
+    "description": "Proxy between the PDF Insight web app and Google Gemini. Receives locally inspected text from PDFs, OCR and attachments; binary images are rejected. Returns a validated summary and structured data (brief §04). Generated from the Zod schemas — do not edit by hand (ADR-0006)."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8787",
+      "description": "Local (wrangler dev)"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Health": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok"
+            ]
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "version"
+        ]
+      },
+      "AnalysisResult": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "$ref": "#/components/schemas/DocumentInfo"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "description": "3–5 sentences in the document language, checked with Unicode sentence segmentation and title-abbreviation tailoring (ADR-0020)."
+          },
+          "keyPoints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "minItems": 3,
+            "maxItems": 7
+          },
+          "entities": {
+            "type": "object",
+            "properties": {
+              "organizations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300
+                }
+              },
+              "people": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              }
+            },
+            "required": [
+              "organizations",
+              "people"
+            ]
+          },
+          "amounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Amount"
+            }
+          },
+          "dates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DateItem"
+            }
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "maxItems": 20
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Warning"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/AnalysisMeta"
+          }
+        },
+        "required": [
+          "document",
+          "summary",
+          "keyPoints",
+          "entities",
+          "amounts",
+          "dates",
+          "keywords",
+          "warnings",
+          "meta"
+        ]
+      },
+      "DocumentInfo": {
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "pages": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 500
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "aa",
+              "ab",
+              "ae",
+              "af",
+              "ak",
+              "am",
+              "an",
+              "ar",
+              "as",
+              "av",
+              "ay",
+              "az",
+              "ba",
+              "be",
+              "bg",
+              "bi",
+              "bm",
+              "bn",
+              "bo",
+              "br",
+              "bs",
+              "ca",
+              "ce",
+              "ch",
+              "co",
+              "cr",
+              "cs",
+              "cu",
+              "cv",
+              "cy",
+              "da",
+              "de",
+              "dv",
+              "dz",
+              "ee",
+              "el",
+              "en",
+              "eo",
+              "es",
+              "et",
+              "eu",
+              "fa",
+              "ff",
+              "fi",
+              "fj",
+              "fo",
+              "fr",
+              "fy",
+              "ga",
+              "gd",
+              "gl",
+              "gn",
+              "gu",
+              "gv",
+              "ha",
+              "he",
+              "hi",
+              "ho",
+              "hr",
+              "ht",
+              "hu",
+              "hy",
+              "hz",
+              "ia",
+              "id",
+              "ie",
+              "ig",
+              "ii",
+              "ik",
+              "io",
+              "is",
+              "it",
+              "iu",
+              "ja",
+              "jv",
+              "ka",
+              "kg",
+              "ki",
+              "kj",
+              "kk",
+              "kl",
+              "km",
+              "kn",
+              "ko",
+              "kr",
+              "ks",
+              "ku",
+              "kv",
+              "kw",
+              "ky",
+              "la",
+              "lb",
+              "lg",
+              "li",
+              "ln",
+              "lo",
+              "lt",
+              "lu",
+              "lv",
+              "mg",
+              "mh",
+              "mi",
+              "mk",
+              "ml",
+              "mn",
+              "mr",
+              "ms",
+              "mt",
+              "my",
+              "na",
+              "nb",
+              "nd",
+              "ne",
+              "ng",
+              "nl",
+              "nn",
+              "no",
+              "nr",
+              "nv",
+              "ny",
+              "oc",
+              "oj",
+              "om",
+              "or",
+              "os",
+              "pa",
+              "pi",
+              "pl",
+              "ps",
+              "pt",
+              "qu",
+              "rm",
+              "rn",
+              "ro",
+              "ru",
+              "rw",
+              "sa",
+              "sc",
+              "sd",
+              "se",
+              "sg",
+              "si",
+              "sk",
+              "sl",
+              "sm",
+              "sn",
+              "so",
+              "sq",
+              "sr",
+              "ss",
+              "st",
+              "su",
+              "sv",
+              "sw",
+              "ta",
+              "te",
+              "tg",
+              "th",
+              "ti",
+              "tk",
+              "tl",
+              "tn",
+              "to",
+              "tr",
+              "ts",
+              "tt",
+              "tw",
+              "ty",
+              "ug",
+              "uk",
+              "ur",
+              "uz",
+              "ve",
+              "vi",
+              "vo",
+              "wa",
+              "wo",
+              "xh",
+              "yi",
+              "yo",
+              "za",
+              "zh",
+              "zu"
+            ],
+            "description": "ISO 639-1 language code of the document."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "faktura",
+              "umowa",
+              "oferta",
+              "raport",
+              "inne"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "Main date of the document (ISO 8601) or null."
+          }
+        },
+        "required": [
+          "fileName",
+          "pages",
+          "language",
+          "type",
+          "title",
+          "date"
+        ]
+      },
+      "Amount": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "ISO 4217 currency code, e.g. PLN, EUR, USD."
+          },
+          "context": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300,
+            "description": "Source excerpt containing the amount and its meaning. When page is provided, copied from that page with whitespace normalized."
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "1-based page number where the value appears, if known."
+          }
+        },
+        "required": [
+          "value",
+          "currency",
+          "context"
+        ]
+      },
+      "DateItem": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "ISO 8601 calendar date, YYYY-MM-DD."
+          },
+          "context": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300,
+            "description": "Source excerpt containing the date and its meaning. When page is provided, copied from that page with whitespace normalized."
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "1-based page number where the value appears, if known."
+          }
+        },
+        "required": [
+          "date",
+          "context"
+        ]
+      },
+      "Warning": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "PROMPT_INJECTION_SUSPECTED",
+              "SECRETS_REDACTED",
+              "AMOUNT_NOT_IN_TEXT",
+              "DATE_NOT_IN_TEXT",
+              "VALUE_FROM_SCAN",
+              "OCR_PAGES",
+              "SCAN_PAGES_SKIPPED",
+              "DOCUMENT_CHUNKED",
+              "FALLBACK_MODEL"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "info",
+              "warning"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500,
+            "description": "Human-readable explanation in Polish."
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "1-based page number where the value appears, if known."
+          },
+          "path": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "JSON path of the flagged item, e.g. amounts[3]."
+          },
+          "excerpt": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "Short quote from the document."
+          }
+        },
+        "required": [
+          "code",
+          "severity",
+          "message"
+        ]
+      },
+      "AnalysisMeta": {
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "string",
+            "enum": [
+              "1.0"
+            ]
+          },
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "durationMs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "chunks": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ocrPages": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "redactions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 40
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "kind",
+                "count"
+              ]
+            }
+          },
+          "inspection": {
+            "type": "object",
+            "properties": {
+              "profile": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "attachments": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "images": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 30
+              },
+              "barcodes": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 200
+              },
+              "metadata": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000
+              },
+              "cacheHit": {
+                "type": "boolean"
+              },
+              "redactions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 40
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "count"
+                  ]
+                },
+                "maxItems": 30
+              }
+            },
+            "required": [
+              "profile",
+              "attachments",
+              "images",
+              "barcodes",
+              "metadata",
+              "cacheHit",
+              "redactions"
+            ]
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "requestId",
+          "model",
+          "generatedAt",
+          "durationMs",
+          "chunks",
+          "ocrPages",
+          "redactions"
+        ]
+      },
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "enum": [
+                  "BAD_REQUEST",
+                  "VALIDATION_FAILED",
+                  "PAYLOAD_TOO_LARGE",
+                  "UNSUPPORTED_MEDIA_TYPE",
+                  "ORIGIN_NOT_ALLOWED",
+                  "RATE_LIMITED",
+                  "NO_TEXT_LAYER",
+                  "DOCUMENT_TOO_LONG",
+                  "AI_INVALID_RESPONSE",
+                  "AI_UNAVAILABLE",
+                  "AI_TIMEOUT",
+                  "NOT_FOUND",
+                  "INTERNAL"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "description": "Fixed Polish message for the code; never echoes input."
+              },
+              "requestId": {
+                "type": "string"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "message"
+                  ]
+                },
+                "description": "Validation issues (VALIDATION_FAILED only)."
+              }
+            },
+            "required": [
+              "code",
+              "message",
+              "requestId"
+            ]
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "AnalyzeRequest": {
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "pageCount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 500
+          },
+          "pages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "number": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 500
+                },
+                "text": {
+                  "type": "string",
+                  "maxLength": 60000
+                },
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "ocr",
+                    "attachment"
+                  ],
+                  "description": "Origin of locally inspected text. Binary images are rejected (ADR-0015)."
+                }
+              },
+              "required": [
+                "number",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 500
+          },
+          "inspection": {
+            "type": "object",
+            "properties": {
+              "profile": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "attachments": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "images": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 30
+              },
+              "barcodes": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 200
+              },
+              "metadata": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000
+              },
+              "cacheHit": {
+                "type": "boolean"
+              },
+              "redactions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 40
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "count"
+                  ]
+                },
+                "maxItems": 30
+              }
+            },
+            "required": [
+              "profile",
+              "attachments",
+              "images",
+              "barcodes",
+              "metadata",
+              "cacheHit",
+              "redactions"
+            ],
+            "description": "Client-reported inspection counts; diagnostic metadata, not authorization or a security proof."
+          }
+        },
+        "required": [
+          "fileName",
+          "pageCount",
+          "pages"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "parameters": {}
+  },
+  "paths": {
+    "/v1/health": {
+      "get": {
+        "operationId": "health",
+        "tags": [
+          "meta"
+        ],
+        "summary": "Liveness check",
+        "responses": {
+          "200": {
+            "description": "Service is up.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/analyze": {
+      "post": {
+        "operationId": "analyzeDocument",
+        "tags": [
+          "analysis"
+        ],
+        "summary": "Summarise a document and extract structured data",
+        "description": "Validates the whole text-only request, redacts credentials, detects prompt-injection attempts, then asks Gemini for a schema-constrained extraction (retry once on an invalid answer). Gemini authentication uses only the Worker secret; clients provide no credentials. Binary images are rejected. Amounts and dates are grounded against source text, including local OCR. Limits: body ≤ 8388608 bytes, ≤ 500 pages, ≤ 480000 characters.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validated analysis result (brief §04 schema plus `warnings` and `meta`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalysisResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST — malformed JSON.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "ORIGIN_NOT_ALLOWED — Origin header not on the allow-list.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "PAYLOAD_TOO_LARGE / DOCUMENT_TOO_LONG.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "UNSUPPORTED_MEDIA_TYPE — body must be application/json.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "VALIDATION_FAILED (with issues) / NO_TEXT_LAYER.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "RATE_LIMITED.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "AI_INVALID_RESPONSE — invalid AI answer after one retry.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "AI_UNAVAILABLE — provider error, including after fallback.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "AI_TIMEOUT — deadline exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "webhooks": {}
+}

@@ -1,0 +1,11 @@
+{
+  "out": "/private/tmp/pdf-insight-perf-ai-baseline-live/samples.jsonl",
+  "runs": 20,
+  "model": "gemini-3.8-flash",
+  "thinking": "low",
+  "bytes": 54454,
+  "pages": 12,
+  "concurrency": 1,
+  "environment": "Node createApp with real Gemini; cloud CPU and browser costs measured separately",
+  "profile": "same provider prompt and validation as Worker"
+}

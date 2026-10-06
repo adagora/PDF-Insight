@@ -1,0 +1,1008 @@
+[
+  {
+    "run": 1,
+    "ms": 28024.595167,
+    "status": 504,
+    "valid": false,
+    "calls": [
+      {
+        "ms": 27841.071,
+        "status": 200,
+        "responseBytes": 11696,
+        "usage": {
+          "promptTokenCount": 17701,
+          "candidatesTokenCount": 4105,
+          "totalTokenCount": 21806
+        }
+      }
+    ],
+    "cpuMs": 140.284,
+    "cpuPercent": 0.5005745815917785,
+    "rssMiB": 69.453125,
+    "peakRssMiB": 91.375,
+    "heapMiB": 22.380355834960938,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "a1d8bd3c-734d-4580-bf8b-ac6b2fcf63a0",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 27870,
+        "outcome": "invalid"
+      },
+      {
+        "event": "ai_call",
+        "requestId": "a1d8bd3c-734d-4580-bf8b-ac6b2fcf63a0",
+        "model": "gemini-3.8-flash",
+        "attempt": 2,
+        "status": 0,
+        "ms": 117,
+        "outcome": "timeout"
+      },
+      {
+        "event": "error",
+        "requestId": "a1d8bd3c-734d-4580-bf8b-ac6b2fcf63a0",
+        "code": "AI_TIMEOUT",
+        "detail": "gemini_deadline"
+      },
+      {
+        "event": "request",
+        "requestId": "a1d8bd3c-734d-4580-bf8b-ac6b2fcf63a0",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 504,
+        "ms": 28006
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "ms": 28003.969708,
+    "status": 504,
+    "valid": false,
+    "calls": [
+      {
+        "ms": 25867.990166999996,
+        "status": 200,
+        "responseBytes": 11222,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 3891,
+          "totalTokenCount": 21594
+        }
+      }
+    ],
+    "cpuMs": 34.902,
+    "cpuPercent": 0.12463233021577441,
+    "rssMiB": 65.890625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 29.055557250976562,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "2553b9bc-f5af-4a26-bef7-ef044b6d76ea",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 25944,
+        "outcome": "invalid"
+      },
+      {
+        "event": "ai_call",
+        "requestId": "2553b9bc-f5af-4a26-bef7-ef044b6d76ea",
+        "model": "gemini-3.8-flash",
+        "attempt": 2,
+        "status": 0,
+        "ms": 2049,
+        "outcome": "timeout"
+      },
+      {
+        "event": "error",
+        "requestId": "2553b9bc-f5af-4a26-bef7-ef044b6d76ea",
+        "code": "AI_TIMEOUT",
+        "detail": "gemini_deadline"
+      },
+      {
+        "event": "request",
+        "requestId": "2553b9bc-f5af-4a26-bef7-ef044b6d76ea",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 504,
+        "ms": 28001
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "ms": 24332.74441700001,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 24301.93149999999,
+        "status": 200,
+        "responseBytes": 10767,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 3555,
+          "thoughtsTokenCount": 163,
+          "totalTokenCount": 21417
+        }
+      }
+    ],
+    "cpuMs": 49.468,
+    "cpuPercent": 0.20329807091319838,
+    "rssMiB": 70.046875,
+    "peakRssMiB": 91.375,
+    "heapMiB": 27.330459594726562,
+    "model": "gemini-3.8-flash",
+    "amounts": 29,
+    "dates": 24,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "88f84d1b-2d43-4a4f-a549-05fefaaadd72",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 24311,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "88f84d1b-2d43-4a4f-a549-05fefaaadd72",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 24330
+      }
+    ]
+  },
+  {
+    "run": 4,
+    "ms": 20658.404041999995,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 20639.684708999994,
+        "status": 200,
+        "responseBytes": 9976,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 3530,
+          "totalTokenCount": 21235
+        }
+      }
+    ],
+    "cpuMs": 30.821,
+    "cpuPercent": 0.14919351919605567,
+    "rssMiB": 75.8125,
+    "peakRssMiB": 91.375,
+    "heapMiB": 21.900070190429688,
+    "model": "gemini-3.8-flash",
+    "amounts": 29,
+    "dates": 28,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "9019e9e3-01f8-422c-a526-b82eb0a3d0cb",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 20642,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "9019e9e3-01f8-422c-a526-b82eb0a3d0cb",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 20656
+      }
+    ]
+  },
+  {
+    "run": 5,
+    "ms": 28004.98333399999,
+    "status": 504,
+    "valid": false,
+    "calls": [
+      {
+        "ms": 24841.062665999998,
+        "status": 200,
+        "responseBytes": 11706,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 4045,
+          "totalTokenCount": 21744
+        }
+      }
+    ],
+    "cpuMs": 43.09,
+    "cpuPercent": 0.15386547274850815,
+    "rssMiB": 81.921875,
+    "peakRssMiB": 91.375,
+    "heapMiB": 21.04016876220703,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "70e303b6-60e0-43ab-b1b4-aa8d74fc492b",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 24842,
+        "outcome": "invalid"
+      },
+      {
+        "event": "ai_call",
+        "requestId": "70e303b6-60e0-43ab-b1b4-aa8d74fc492b",
+        "model": "gemini-3.8-flash",
+        "attempt": 2,
+        "status": 0,
+        "ms": 3155,
+        "outcome": "timeout"
+      },
+      {
+        "event": "error",
+        "requestId": "70e303b6-60e0-43ab-b1b4-aa8d74fc492b",
+        "code": "AI_TIMEOUT",
+        "detail": "gemini_deadline"
+      },
+      {
+        "event": "request",
+        "requestId": "70e303b6-60e0-43ab-b1b4-aa8d74fc492b",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 504,
+        "ms": 28003
+      }
+    ]
+  },
+  {
+    "run": 6,
+    "ms": 23151.439584000007,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 23107.386499999993,
+        "status": 200,
+        "responseBytes": 11313,
+        "usage": {
+          "promptTokenCount": 17697,
+          "candidatesTokenCount": 3902,
+          "totalTokenCount": 21599
+        }
+      }
+    ],
+    "cpuMs": 66.232,
+    "cpuPercent": 0.28608156205445223,
+    "rssMiB": 72.5625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 20.759765625,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": false,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "02286785-68ce-44de-b8a1-8e0fe22d4a6f",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 23113,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "02286785-68ce-44de-b8a1-8e0fe22d4a6f",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 23143
+      }
+    ]
+  },
+  {
+    "run": 7,
+    "ms": 26614.77799999999,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 26589.65741699998,
+        "status": 200,
+        "responseBytes": 10891,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 3787,
+          "totalTokenCount": 21492
+        }
+      }
+    ],
+    "cpuMs": 39.928,
+    "cpuPercent": 0.15002191639547027,
+    "rssMiB": 71.15625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 23.74750518798828,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "f718a860-69f2-492e-b747-9bc76a86930f",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 26592,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "f718a860-69f2-492e-b747-9bc76a86930f",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 26608
+      }
+    ]
+  },
+  {
+    "run": 8,
+    "ms": 24395.011,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 24369.036040999985,
+        "status": 200,
+        "responseBytes": 9957,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 3580,
+          "totalTokenCount": 21279
+        }
+      }
+    ],
+    "cpuMs": 37.908,
+    "cpuPercent": 0.15539242839447787,
+    "rssMiB": 72.90625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 24.23436737060547,
+    "model": "gemini-3.8-flash",
+    "amounts": 26,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "0ed5565f-706b-4598-8592-a19afe419eae",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 24374,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "0ed5565f-706b-4598-8592-a19afe419eae",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 24389
+      }
+    ]
+  },
+  {
+    "run": 9,
+    "ms": 24539.70324999999,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 24512.988291999995,
+        "status": 200,
+        "responseBytes": 11260,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 3921,
+          "totalTokenCount": 21624
+        }
+      }
+    ],
+    "cpuMs": 78.078,
+    "cpuPercent": 0.3181701066413671,
+    "rssMiB": 75.515625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 20.37085723876953,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "f4ca303f-fe11-490b-938a-a4984c42fccc",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 24519,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "f4ca303f-fe11-490b-938a-a4984c42fccc",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 24536
+      }
+    ]
+  },
+  {
+    "run": 10,
+    "ms": 24382.416667000012,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 24354.246458999987,
+        "status": 200,
+        "responseBytes": 10058,
+        "usage": {
+          "promptTokenCount": 17703,
+          "candidatesTokenCount": 3539,
+          "totalTokenCount": 21242
+        }
+      }
+    ],
+    "cpuMs": 40.01,
+    "cpuPercent": 0.16409366038827025,
+    "rssMiB": 75.1875,
+    "peakRssMiB": 91.375,
+    "heapMiB": 20.58978271484375,
+    "model": "gemini-3.8-flash",
+    "amounts": 29,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "e3c94430-2a1a-4a74-9d14-b136641006c8",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 24361,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "e3c94430-2a1a-4a74-9d14-b136641006c8",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 24380
+      }
+    ]
+  },
+  {
+    "run": 11,
+    "ms": 24788.046833,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 24772.22775000002,
+        "status": 200,
+        "responseBytes": 11141,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 3920,
+          "totalTokenCount": 21625
+        }
+      }
+    ],
+    "cpuMs": 21.064,
+    "cpuPercent": 0.08497644103188386,
+    "rssMiB": 72.015625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 22.878456115722656,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": false,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "7bfbbacf-214b-4c98-9080-f5f7cef0990e",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 24774,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "7bfbbacf-214b-4c98-9080-f5f7cef0990e",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 24785
+      }
+    ]
+  },
+  {
+    "run": 12,
+    "ms": 28002.46779199998,
+    "status": 504,
+    "valid": false,
+    "calls": [
+      {
+        "ms": 24509.475208999997,
+        "status": 200,
+        "responseBytes": 11361,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 3967,
+          "totalTokenCount": 21672
+        }
+      }
+    ],
+    "cpuMs": 16.225,
+    "cpuPercent": 0.057941321888191996,
+    "rssMiB": 73.078125,
+    "peakRssMiB": 91.375,
+    "heapMiB": 23.579261779785156,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "0cef6e52-7e4f-4339-8388-c06361353231",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 24512,
+        "outcome": "invalid"
+      },
+      {
+        "event": "ai_call",
+        "requestId": "0cef6e52-7e4f-4339-8388-c06361353231",
+        "model": "gemini-3.8-flash",
+        "attempt": 2,
+        "status": 0,
+        "ms": 3484,
+        "outcome": "timeout"
+      },
+      {
+        "event": "error",
+        "requestId": "0cef6e52-7e4f-4339-8388-c06361353231",
+        "code": "AI_TIMEOUT",
+        "detail": "gemini_deadline"
+      },
+      {
+        "event": "request",
+        "requestId": "0cef6e52-7e4f-4339-8388-c06361353231",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 504,
+        "ms": 28001
+      }
+    ]
+  },
+  {
+    "run": 13,
+    "ms": 12906.45641699998,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 12895.727957999974,
+        "status": 200,
+        "responseBytes": 5507,
+        "usage": {
+          "promptTokenCount": 17707,
+          "candidatesTokenCount": 1690,
+          "totalTokenCount": 19397
+        }
+      }
+    ],
+    "cpuMs": 46.746,
+    "cpuPercent": 0.3621908174456595,
+    "rssMiB": 74.9375,
+    "peakRssMiB": 91.375,
+    "heapMiB": 20.599166870117188,
+    "model": "gemini-3.8-flash",
+    "amounts": 11,
+    "dates": 9,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "11bb063b-2865-4478-8788-980c526ae3c9",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 12897,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "11bb063b-2865-4478-8788-980c526ae3c9",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 12905
+      }
+    ]
+  },
+  {
+    "run": 14,
+    "ms": 28005.30262500001,
+    "status": 504,
+    "valid": false,
+    "calls": [
+      {
+        "ms": 25995.236083000025,
+        "status": 200,
+        "responseBytes": 11837,
+        "usage": {
+          "promptTokenCount": 17701,
+          "candidatesTokenCount": 4156,
+          "totalTokenCount": 21857
+        }
+      }
+    ],
+    "cpuMs": 47.776,
+    "cpuPercent": 0.170596263999486,
+    "rssMiB": 70.671875,
+    "peakRssMiB": 91.375,
+    "heapMiB": 22.00031280517578,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "c4e16d49-2e9c-43b0-ac37-8f6b92f72ba4",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 26003,
+        "outcome": "invalid"
+      },
+      {
+        "event": "ai_call",
+        "requestId": "c4e16d49-2e9c-43b0-ac37-8f6b92f72ba4",
+        "model": "gemini-3.8-flash",
+        "attempt": 2,
+        "status": 0,
+        "ms": 1994,
+        "outcome": "timeout"
+      },
+      {
+        "event": "error",
+        "requestId": "c4e16d49-2e9c-43b0-ac37-8f6b92f72ba4",
+        "code": "AI_TIMEOUT",
+        "detail": "gemini_deadline"
+      },
+      {
+        "event": "request",
+        "requestId": "c4e16d49-2e9c-43b0-ac37-8f6b92f72ba4",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 504,
+        "ms": 28003
+      }
+    ]
+  },
+  {
+    "run": 15,
+    "ms": 26912.043790999975,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 26891.71187499998,
+        "status": 200,
+        "responseBytes": 11308,
+        "usage": {
+          "promptTokenCount": 17707,
+          "candidatesTokenCount": 3938,
+          "totalTokenCount": 21645
+        }
+      }
+    ],
+    "cpuMs": 28.244,
+    "cpuPercent": 0.10494929415002462,
+    "rssMiB": 72.734375,
+    "peakRssMiB": 91.375,
+    "heapMiB": 22.3265380859375,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "ccdd04ca-2e5d-431d-98c7-e4e23d63737f",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 26895,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "ccdd04ca-2e5d-431d-98c7-e4e23d63737f",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 26910
+      }
+    ]
+  },
+  {
+    "run": 16,
+    "ms": 21442.958207999996,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 21425.02025,
+        "status": 200,
+        "responseBytes": 10657,
+        "usage": {
+          "promptTokenCount": 17701,
+          "candidatesTokenCount": 3734,
+          "totalTokenCount": 21435
+        }
+      }
+    ],
+    "cpuMs": 27.136,
+    "cpuPercent": 0.12654970334212576,
+    "rssMiB": 69.140625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 23.48809814453125,
+    "model": "gemini-3.8-flash",
+    "amounts": 30,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "bb474120-8f07-4416-b65c-b3f1019a20f2",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 21430,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "bb474120-8f07-4416-b65c-b3f1019a20f2",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 21441
+      }
+    ]
+  },
+  {
+    "run": 17,
+    "ms": 27306.38283299998,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 27293.759416999994,
+        "status": 200,
+        "responseBytes": 11519,
+        "usage": {
+          "promptTokenCount": 17699,
+          "candidatesTokenCount": 3993,
+          "totalTokenCount": 21692
+        }
+      }
+    ],
+    "cpuMs": 17.029,
+    "cpuPercent": 0.06236270876353611,
+    "rssMiB": 71.796875,
+    "peakRssMiB": 91.375,
+    "heapMiB": 25.214859008789062,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "07f1c0c6-fec0-4ebe-a962-f8ee46ad2015",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 27296,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "07f1c0c6-fec0-4ebe-a962-f8ee46ad2015",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 27305
+      }
+    ]
+  },
+  {
+    "run": 18,
+    "ms": 25436.614,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 25423.59120799997,
+        "status": 200,
+        "responseBytes": 11059,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 3826,
+          "totalTokenCount": 21531
+        }
+      }
+    ],
+    "cpuMs": 19.498,
+    "cpuPercent": 0.07665328412028424,
+    "rssMiB": 68.140625,
+    "peakRssMiB": 91.375,
+    "heapMiB": 25.31964874267578,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "88190c86-46a6-495a-bb5b-4f6a33a0e7be",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 25426,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "88190c86-46a6-495a-bb5b-4f6a33a0e7be",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 25434
+      }
+    ]
+  },
+  {
+    "run": 19,
+    "ms": 22844.041958999995,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 22823.524791000003,
+        "status": 200,
+        "responseBytes": 11410,
+        "usage": {
+          "promptTokenCount": 17705,
+          "candidatesTokenCount": 3904,
+          "totalTokenCount": 21609
+        }
+      }
+    ],
+    "cpuMs": 31.376,
+    "cpuPercent": 0.13734872338403592,
+    "rssMiB": 71.78125,
+    "peakRssMiB": 91.375,
+    "heapMiB": 26.299644470214844,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "be8ec5ee-eb25-45f3-a05f-b428c2a80c8a",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 22829,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "be8ec5ee-eb25-45f3-a05f-b428c2a80c8a",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 22842
+      }
+    ]
+  },
+  {
+    "run": 20,
+    "ms": 23222.000624999986,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 23205.23225,
+        "status": 200,
+        "responseBytes": 11250,
+        "usage": {
+          "promptTokenCount": 17697,
+          "candidatesTokenCount": 3904,
+          "totalTokenCount": 21601
+        }
+      }
+    ],
+    "cpuMs": 56.601,
+    "cpuPercent": 0.24373868950406177,
+    "rssMiB": 77.25,
+    "peakRssMiB": 91.375,
+    "heapMiB": 19.95879364013672,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false,
+    "logs": [
+      {
+        "event": "ai_call",
+        "requestId": "c1d33617-fbae-4564-a96e-76753aef4805",
+        "model": "gemini-3.8-flash",
+        "attempt": 1,
+        "status": 200,
+        "ms": 23207,
+        "outcome": "ok"
+      },
+      {
+        "event": "request",
+        "requestId": "c1d33617-fbae-4564-a96e-76753aef4805",
+        "method": "POST",
+        "route": "/v1/analyze",
+        "status": 200,
+        "ms": 23220
+      }
+    ]
+  }
+]

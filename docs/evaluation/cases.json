@@ -1,0 +1,176 @@
+[
+  {
+    "name": "Polish invoice with VAT and an explicit due date",
+    "request": {
+      "fileName": "faktura.pdf",
+      "pageCount": 1,
+      "pages": [
+        {
+          "number": 1,
+          "text": "FAKTURA FV-10/2026\nData wystawienia: 2026-09-01. Sprzedawca: Alfa sp. z o.o. Nabywca: Beta S.A. Przedmiot: usługi serwisowe. Kwota netto: 1 000,00 PLN. VAT 23%: 230,00 PLN. Do zapłaty brutto: 1 230,00 PLN. Termin płatności: 2026-09-15. Dokument nie wymienia osób fizycznych."
+        }
+      ]
+    },
+    "expected": {
+      "language": "pl",
+      "type": "faktura",
+      "date": "2026-09-01",
+      "amounts": [
+        {
+          "value": 1000,
+          "currency": "PLN"
+        },
+        {
+          "value": 230,
+          "currency": "PLN"
+        },
+        {
+          "value": 1230,
+          "currency": "PLN"
+        }
+      ],
+      "dates": ["2026-09-01", "2026-09-15"],
+      "organizations": ["Alfa sp. z o.o.", "Beta S.A."],
+      "people": [],
+      "summaryTerms": ["serwis", "Alfa", "Beta"]
+    }
+  },
+  {
+    "name": "English offer with an amount and a relative delivery period",
+    "request": {
+      "fileName": "offer.pdf",
+      "pageCount": 1,
+      "pages": [
+        {
+          "number": 1,
+          "text": "OFFER FOR WEBSITE MAINTENANCE\nIssue date: 2026-08-15. Supplier: Acme Ltd. Customer: Northwind Ltd. Price: GBP 480.00. The offer covers one year of website maintenance. Delivery starts within 14 days of acceptance. No named individuals or other monetary amounts appear in this offer."
+        }
+      ]
+    },
+    "expected": {
+      "language": "en",
+      "type": "oferta",
+      "date": "2026-08-15",
+      "amounts": [
+        {
+          "value": 480,
+          "currency": "GBP"
+        }
+      ],
+      "dates": ["2026-08-15"],
+      "organizations": ["Acme Ltd.", "Northwind Ltd."],
+      "people": [],
+      "summaryTerms": ["maintenance", "Acme", "Northwind"]
+    }
+  },
+  {
+    "name": "German report with percentages and counts but no money",
+    "request": {
+      "fileName": "bericht.pdf",
+      "pageCount": 1,
+      "pages": [
+        {
+          "number": 1,
+          "text": "BERICHT ZUR SERVICEQUALITÄT\nBerichtsdatum: 2026-07-31. Organisation: Beispiel GmbH. Im Juli wurden 135 Anfragen bearbeitet. Die Zufriedenheit lag bei 92 Prozent. Der Bericht nennt keine Geldbeträge und keine natürlichen Personen."
+        }
+      ]
+    },
+    "expected": {
+      "language": "de",
+      "type": "raport",
+      "date": "2026-07-31",
+      "amounts": [],
+      "dates": ["2026-07-31"],
+      "organizations": ["Beispiel GmbH"],
+      "people": [],
+      "summaryTerms": ["135", "92", "Beispiel"]
+    }
+  },
+  {
+    "name": "French agreement with an explicitly named person",
+    "request": {
+      "fileName": "contrat.pdf",
+      "pageCount": 1,
+      "pages": [
+        {
+          "number": 1,
+          "text": "CONTRAT DE MAINTENANCE\nDate de signature : 2026-06-01. Société : Exemple SARL. Signataire : Marie Dupont. Le contrat porte sur la maintenance informatique pendant douze mois. Le prix mensuel est de 250,00 EUR. Aucun autre montant ni aucune autre date ne figurent dans ce document."
+        }
+      ]
+    },
+    "expected": {
+      "language": "fr",
+      "type": "umowa",
+      "date": "2026-06-01",
+      "amounts": [
+        {
+          "value": 250,
+          "currency": "EUR"
+        }
+      ],
+      "dates": ["2026-06-01"],
+      "organizations": ["Exemple SARL"],
+      "people": ["Marie Dupont"],
+      "summaryTerms": ["maintenance", "Exemple", "Marie Dupont"]
+    }
+  },
+  {
+    "name": "Sparse Polish note with missing dates, organizations, people and money",
+    "request": {
+      "fileName": "notatka.pdf",
+      "pageCount": 1,
+      "pages": [
+        {
+          "number": 1,
+          "text": "NOTATKA\nZalecane jest codzienne wykonywanie kopii zapasowej. Kopie należy przechowywać na oddzielnym nośniku. Raz w miesiącu należy sprawdzić możliwość odtworzenia danych."
+        }
+      ]
+    },
+    "expected": {
+      "language": "pl",
+      "type": "inne",
+      "date": null,
+      "amounts": [],
+      "dates": [],
+      "organizations": [],
+      "people": [],
+      "summaryTerms": ["kopi", "odtworz"]
+    }
+  },
+  {
+    "name": "Polish invoice with a long service appendix",
+    "request": {
+      "fileName": "faktura.pdf",
+      "pageCount": 1,
+      "pages": [
+        {
+          "number": 1,
+          "text": "FAKTURA FV-10/2026\nData wystawienia: 2026-09-01. Sprzedawca: Alfa sp. z o.o. Nabywca: Beta S.A. Przedmiot: usługi serwisowe. Kwota netto: 1 000,00 PLN. VAT 23%: 230,00 PLN. Do zapłaty brutto: 1 230,00 PLN. Termin płatności: 2026-09-15. Dokument nie wymienia osób fizycznych.\nZałącznik: zasady obsługi.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\nSerwis obejmuje obsługę zgłoszeń i wsparcie techniczne.\n"
+        }
+      ]
+    },
+    "expected": {
+      "language": "pl",
+      "type": "faktura",
+      "date": "2026-09-01",
+      "amounts": [
+        {
+          "value": 1000,
+          "currency": "PLN"
+        },
+        {
+          "value": 230,
+          "currency": "PLN"
+        },
+        {
+          "value": 1230,
+          "currency": "PLN"
+        }
+      ],
+      "dates": ["2026-09-01", "2026-09-15"],
+      "organizations": ["Alfa sp. z o.o.", "Beta S.A."],
+      "people": [],
+      "summaryTerms": ["serwis", "Alfa", "Beta"]
+    }
+  }
+]

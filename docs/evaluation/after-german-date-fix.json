@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Polish invoice with VAT and an explicit due date",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 274,
+    "ms": 5795.417375,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "English offer with an amount and a relative delivery period",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 282,
+    "ms": 3617.6569999999992,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": false,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": false
+  },
+  {
+    "name": "German report with percentages and counts but no money",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 229,
+    "ms": 6266.824834000001,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "French agreement with an explicitly named person",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 280,
+    "ms": 3882.928833,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "Sparse Polish note with missing dates, organizations, people and money",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 171,
+    "ms": 3242.982333,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "Polish invoice with a long service appendix",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 14862,
+    "ms": 4971.48675,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  }
+]

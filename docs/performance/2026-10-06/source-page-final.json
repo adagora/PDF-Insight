@@ -1,0 +1,1162 @@
+[
+  {
+    "run": 1,
+    "ms": 9120.324042,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5768.1666669999995,
+        "status": 200,
+        "responseBytes": 2724,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 655,
+          "totalTokenCount": 18400
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7677.327542,
+        "status": 200,
+        "responseBytes": 2885,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17739,
+          "candidatesTokenCount": 693,
+          "totalTokenCount": 18432
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 9029.103584,
+        "status": 200,
+        "responseBytes": 1820,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17728,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18226
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 285.36,
+    "cpuPercent": 3.128836197989115,
+    "rssMiB": 119.09375,
+    "peakRssMiB": 121.109375,
+    "heapMiB": 33.03892517089844,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 2,
+    "ms": 9891.736792000002,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5600.775583000001,
+        "status": 200,
+        "responseBytes": 2731,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 662,
+          "totalTokenCount": 18413
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6092.694917000001,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17734,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18232
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 9853.272917000002,
+        "status": 200,
+        "responseBytes": 2923,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 693,
+          "totalTokenCount": 18438
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 120.883,
+    "cpuPercent": 1.222060418123588,
+    "rssMiB": 107.09375,
+    "peakRssMiB": 121.109375,
+    "heapMiB": 35.86186981201172,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 3,
+    "ms": 7225.023499999999,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6051.360999999997,
+        "status": 200,
+        "responseBytes": 1784,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17738,
+          "candidatesTokenCount": 481,
+          "totalTokenCount": 18219
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6644.659500000002,
+        "status": 200,
+        "responseBytes": 2746,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17755,
+          "candidatesTokenCount": 677,
+          "totalTokenCount": 18432
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7172.458416999998,
+        "status": 200,
+        "responseBytes": 2659,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17749,
+          "candidatesTokenCount": 621,
+          "totalTokenCount": 18370
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 166.841,
+    "cpuPercent": 2.3092104821527575,
+    "rssMiB": 107.296875,
+    "peakRssMiB": 121.109375,
+    "heapMiB": 38.704986572265625,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 28,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 4,
+    "ms": 8566.886958000003,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6029.090207999998,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17734,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18232
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6796.471916000002,
+        "status": 200,
+        "responseBytes": 2731,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 662,
+          "totalTokenCount": 18413
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 8517.082291999996,
+        "status": 200,
+        "responseBytes": 2910,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 708,
+          "totalTokenCount": 18453
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 155.578,
+    "cpuPercent": 1.8160389037784237,
+    "rssMiB": 108.515625,
+    "peakRssMiB": 121.109375,
+    "heapMiB": 41.55542755126953,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 5,
+    "ms": 9852.637209,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 4841.853500000005,
+        "status": 200,
+        "responseBytes": 1819,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17728,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18226
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7389.629291999998,
+        "status": 200,
+        "responseBytes": 2686,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17739,
+          "candidatesTokenCount": 618,
+          "totalTokenCount": 18357
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 9820.146792,
+        "status": 200,
+        "responseBytes": 2732,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 663,
+          "totalTokenCount": 18408
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 198.227,
+    "cpuPercent": 2.0119181879439076,
+    "rssMiB": 127.84375,
+    "peakRssMiB": 127.859375,
+    "heapMiB": 47.68574523925781,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 6,
+    "ms": 6458.242957999995,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 6130.539875000002,
+        "status": 200,
+        "responseBytes": 2723,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17747,
+          "candidatesTokenCount": 654,
+          "totalTokenCount": 18401
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6258.342042000004,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17730,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18228
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6420.729082999998,
+        "status": 200,
+        "responseBytes": 2950,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17741,
+          "candidatesTokenCount": 717,
+          "totalTokenCount": 18458
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 142.329,
+    "cpuPercent": 2.203834710549149,
+    "rssMiB": 140.734375,
+    "peakRssMiB": 140.9375,
+    "heapMiB": 36.66416931152344,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 7,
+    "ms": 6776.547333000002,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5319.095500000003,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17738,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18236
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6498.531457999998,
+        "status": 200,
+        "responseBytes": 2724,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17755,
+          "candidatesTokenCount": 656,
+          "totalTokenCount": 18411
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6740.122625000004,
+        "status": 200,
+        "responseBytes": 2745,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17749,
+          "candidatesTokenCount": 641,
+          "totalTokenCount": 18390
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 126.75,
+    "cpuPercent": 1.8704215254685945,
+    "rssMiB": 142.078125,
+    "peakRssMiB": 143.078125,
+    "heapMiB": 29.765548706054688,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 8,
+    "ms": 7169.460207999997,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5217.847332999998,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17736,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18234
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6031.179209000002,
+        "status": 200,
+        "responseBytes": 2723,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17753,
+          "candidatesTokenCount": 654,
+          "totalTokenCount": 18407
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7114.409957999997,
+        "status": 200,
+        "responseBytes": 2878,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17747,
+          "candidatesTokenCount": 690,
+          "totalTokenCount": 18437
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 125.676,
+    "cpuPercent": 1.7529353166611517,
+    "rssMiB": 140.390625,
+    "peakRssMiB": 143.078125,
+    "heapMiB": 55.780517578125,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 9,
+    "ms": 7332.332457999997,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5364.878791999996,
+        "status": 200,
+        "responseBytes": 2762,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 694,
+          "totalTokenCount": 18445
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6861.047375000009,
+        "status": 200,
+        "responseBytes": 2733,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 658,
+          "totalTokenCount": 18403
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7288.382708000005,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17734,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18232
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 187.739,
+    "cpuPercent": 2.560426727448316,
+    "rssMiB": 147.671875,
+    "peakRssMiB": 147.671875,
+    "heapMiB": 47.197662353515625,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 10,
+    "ms": 8084.18983399999,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5644.525750000001,
+        "status": 200,
+        "responseBytes": 1820,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17730,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18228
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6729.831250000003,
+        "status": 200,
+        "responseBytes": 2724,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17741,
+          "candidatesTokenCount": 620,
+          "totalTokenCount": 18361
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 8052.805916999991,
+        "status": 200,
+        "responseBytes": 2763,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17747,
+          "candidatesTokenCount": 694,
+          "totalTokenCount": 18441
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 135.632,
+    "cpuPercent": 1.677743877680448,
+    "rssMiB": 150.953125,
+    "peakRssMiB": 150.953125,
+    "heapMiB": 32.867340087890625,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 11,
+    "ms": 9694.50579200001,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 4781.967625000005,
+        "status": 200,
+        "responseBytes": 1895,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17730,
+          "candidatesTokenCount": 532,
+          "totalTokenCount": 18262
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7913.494458000001,
+        "status": 200,
+        "responseBytes": 2854,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17741,
+          "candidatesTokenCount": 718,
+          "totalTokenCount": 18459
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 9657.337625,
+        "status": 200,
+        "responseBytes": 2724,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17747,
+          "candidatesTokenCount": 655,
+          "totalTokenCount": 18402
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 141.841,
+    "cpuPercent": 1.4631070736689684,
+    "rssMiB": 129.75,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 52.647300720214844,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 31,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 12,
+    "ms": 6196.520749999996,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5371.660917000001,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17734,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18232
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 5768.569665999996,
+        "status": 200,
+        "responseBytes": 2724,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 655,
+          "totalTokenCount": 18406
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6157.096167000011,
+        "status": 200,
+        "responseBytes": 3016,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 742,
+          "totalTokenCount": 18487
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 131.325,
+    "cpuPercent": 2.119334466845771,
+    "rssMiB": 141.03125,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 38.63990020751953,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 13,
+    "ms": 7220.269082999992,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 4997.8837080000085,
+        "status": 200,
+        "responseBytes": 1820,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17738,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18236
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6848.449165999991,
+        "status": 200,
+        "responseBytes": 2822,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17749,
+          "candidatesTokenCount": 680,
+          "totalTokenCount": 18429
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7191.2388749999955,
+        "status": 200,
+        "responseBytes": 2807,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17755,
+          "candidatesTokenCount": 738,
+          "totalTokenCount": 18493
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 101.144,
+    "cpuPercent": 1.4008342187432035,
+    "rssMiB": 132.375,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 55.65789031982422,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 14,
+    "ms": 6361.190583000003,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 4769.092166999995,
+        "status": 200,
+        "responseBytes": 1820,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17736,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18234
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6322.78641700001,
+        "status": 200,
+        "responseBytes": 2751,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17753,
+          "candidatesTokenCount": 684,
+          "totalTokenCount": 18437
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6328.188584000003,
+        "status": 200,
+        "responseBytes": 2650,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17747,
+          "candidatesTokenCount": 620,
+          "totalTokenCount": 18367
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 161.999,
+    "cpuPercent": 2.546677353653498,
+    "rssMiB": 144.03125,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 49.65210723876953,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 15,
+    "ms": 8021.489000000001,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5451.788667000001,
+        "status": 200,
+        "responseBytes": 1820,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17734,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18232
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7535.1054580000055,
+        "status": 200,
+        "responseBytes": 2727,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 658,
+          "totalTokenCount": 18409
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7988.014458999998,
+        "status": 200,
+        "responseBytes": 2908,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 724,
+          "totalTokenCount": 18469
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 102.671,
+    "cpuPercent": 1.2799493959288604,
+    "rssMiB": 144.171875,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 35.61109161376953,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 16,
+    "ms": 7024.828416999997,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5845.77012500001,
+        "status": 200,
+        "responseBytes": 1820,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17738,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18236
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6472.129084,
+        "status": 200,
+        "responseBytes": 2782,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17749,
+          "candidatesTokenCount": 669,
+          "totalTokenCount": 18418
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6992.431792000003,
+        "status": 200,
+        "responseBytes": 2762,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17755,
+          "candidatesTokenCount": 694,
+          "totalTokenCount": 18449
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 104.717,
+    "cpuPercent": 1.4906698610116393,
+    "rssMiB": 139.296875,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 53.19244384765625,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 17,
+    "ms": 7218.087750000006,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5112.261375000002,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17732,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18230
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6101.400083,
+        "status": 200,
+        "responseBytes": 2760,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17749,
+          "candidatesTokenCount": 694,
+          "totalTokenCount": 18443
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 7188.705292000013,
+        "status": 200,
+        "responseBytes": 2645,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17743,
+          "candidatesTokenCount": 607,
+          "totalTokenCount": 18350
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 102.173,
+    "cpuPercent": 1.4155134093513884,
+    "rssMiB": 140.875,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 38.94084930419922,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 18,
+    "ms": 8050.057208999991,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5095.791834000003,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17734,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18232
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6193.647750000004,
+        "status": 200,
+        "responseBytes": 2763,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 694,
+          "totalTokenCount": 18445
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 8015.3449580000015,
+        "status": 200,
+        "responseBytes": 2892,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 718,
+          "totalTokenCount": 18463
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 104.461,
+    "cpuPercent": 1.2976429519434005,
+    "rssMiB": 129.765625,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 56.27806854248047,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 19,
+    "ms": 7006.333584000007,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 4947.87945800001,
+        "status": 200,
+        "responseBytes": 1821,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17726,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18224
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 5763.32916600001,
+        "status": 200,
+        "responseBytes": 2763,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17743,
+          "candidatesTokenCount": 695,
+          "totalTokenCount": 18438
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6969.914916000009,
+        "status": 200,
+        "responseBytes": 3021,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17737,
+          "candidatesTokenCount": 759,
+          "totalTokenCount": 18496
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 139.648,
+    "cpuPercent": 1.9931680147075317,
+    "rssMiB": 130.765625,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 48.697845458984375,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  },
+  {
+    "run": 20,
+    "ms": 9872.522125000018,
+    "status": 200,
+    "valid": true,
+    "calls": [
+      {
+        "ms": 5235.527375000005,
+        "status": 200,
+        "responseBytes": 1820,
+        "issuePaths": [],
+        "group": "dates",
+        "usage": {
+          "promptTokenCount": 17734,
+          "candidatesTokenCount": 498,
+          "totalTokenCount": 18232
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 6350.678458000009,
+        "status": 200,
+        "responseBytes": 2746,
+        "issuePaths": [],
+        "group": "facts",
+        "usage": {
+          "promptTokenCount": 17745,
+          "candidatesTokenCount": 619,
+          "totalTokenCount": 18364
+        },
+        "rejectedReferenceCount": 0
+      },
+      {
+        "ms": 9838.558709000004,
+        "status": 200,
+        "responseBytes": 2731,
+        "issuePaths": [],
+        "group": "amounts",
+        "usage": {
+          "promptTokenCount": 17751,
+          "candidatesTokenCount": 662,
+          "totalTokenCount": 18413
+        },
+        "rejectedReferenceCount": 0
+      }
+    ],
+    "cpuMs": 130.564,
+    "cpuPercent": 1.3224989353974201,
+    "rssMiB": 147.921875,
+    "peakRssMiB": 151.203125,
+    "heapMiB": 34.15418243408203,
+    "model": "gemini-3.8-flash",
+    "amounts": 40,
+    "dates": 29,
+    "annex": true,
+    "injectionFlag": true,
+    "injectedAmount": false
+  }
+]

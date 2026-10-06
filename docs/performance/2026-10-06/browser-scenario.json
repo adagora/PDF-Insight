@@ -1,0 +1,21 @@
+{
+  "name": "fresh-context-contract",
+  "runs": 20,
+  "web": "http://localhost:4175/PDF-Insight/",
+  "api": "https://pdf-insight-api.a-gora.workers.dev",
+  "proxy": "Node fetch strips Origin; browser CORS checked separately after publishing",
+  "pdfSha256": "60feaf2988d77897e42c022a449c21580baa17edfff412d86839d6565500d313",
+  "inputBytes": 568912,
+  "target": "every successful upload-to-visible-result < 30000 ms; p95 < 30000 ms; no errors; injection and scanned annex retained",
+  "cache": "new Chromium process and context each run; OS filesystem warm; no tab inspection cache",
+  "concurrency": 1,
+  "viewport": [1366, 900],
+  "symbols": "production JS + source maps; third-party OCR Wasm has no debug symbols",
+  "unavailable": [
+    "PSS: macOS",
+    "per-worker V8 heap: page CDP metrics omit workers",
+    "per-core attribution: aggregate process snapshots only",
+    "TTFT/TPOT: nonstreaming provider API"
+  ],
+  "isolation": "no tests/builds during browser inspection; ordinary host power settings unchanged"
+}

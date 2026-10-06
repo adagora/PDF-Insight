@@ -1,0 +1,19 @@
+{
+  "gitSha": "c3cfc04787c3e012ef033ba4afefb22379819182",
+  "sourceSha256": {
+    "apps/api/src/lib/extraction.ts": "b0e602fadd307a864164e718fe14aac68b3b556d49ee56c54ccdba87faa51edf",
+    "apps/api/src/lib/source-context.ts": "3a1fa827a9234a5ca827cb419aa52745a0d9a09bcc2cc8e1018ba8d087a04404",
+    "apps/api/src/lib/llm-schema.ts": "d74330fe393f2d7204eeaee83838b6074b3dd279166a6a9957590fcb5b73a326",
+    "scripts/profile-analysis.ts": "66b1cce3620fbf11dca50036ed19cab51bf23ea3b60bc7b8d01627b7b756cca6"
+  },
+  "model": "gemini-3.8-flash",
+  "thinking": "low",
+  "replays": 20,
+  "fingerprint": "fingerprint.json",
+  "limitations": [
+    "No CPU pinning or complete host isolation",
+    "Static checks overlapped late final samples",
+    "Node profiler repeats parsing and indexing; CPU and RSS are harness measurements",
+    "Browser and Cloudflare final checks are separate measurements"
+  ]
+}

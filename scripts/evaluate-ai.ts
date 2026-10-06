@@ -102,6 +102,8 @@ for (const entry of cases) {
     status: response.status,
     errorCode: error.success ? error.data.error.code : null,
     sourceChars: entry.request.pages.reduce((total, page) => total + page.text.length, 0),
+    observedOrganizations: parsed.ok ? parsed.value.entities.organizations : null,
+    observedPeople: parsed.ok ? parsed.value.entities.people : null,
     ms: performance.now() - start,
     checks,
     passed: Object.values(checks).every(Boolean),

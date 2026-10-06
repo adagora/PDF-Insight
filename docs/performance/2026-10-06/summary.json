@@ -1,0 +1,134 @@
+{
+  "browser_inspection_ms": {
+    "count": 20,
+    "p50": 14587.128749999974,
+    "p95": 16612.16216700003,
+    "p99": 16631.275208999985,
+    "p99_9": 16631.275208999985,
+    "p99_99": 16631.275208999985,
+    "max": 16631.275208999985,
+    "mean": 15248.883223,
+    "cv": 0.06198543080828264,
+    "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+  },
+  "api_ms": {
+    "count": 20,
+    "p50": 24539.70324999999,
+    "p95": 28005.30262500001,
+    "p99": 28024.595167,
+    "p99_9": 28024.595167,
+    "p99_99": 28024.595167,
+    "max": 28024.595167,
+    "mean": 24648.718012599995,
+    "cv": 0.141991134933623,
+    "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+  },
+  "api_successes": 15,
+  "api_timeouts": 5,
+  "annex_present_in_valid_results": 13,
+  "api_cpu_ms": {
+    "count": 20,
+    "p50": 37.908,
+    "p95": 78.078,
+    "p99": 140.284,
+    "p99_9": 140.284,
+    "p99_99": 140.284,
+    "max": 140.284,
+    "mean": 43.6208,
+    "cv": 0.6231593566720655,
+    "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+  },
+  "api_peak_rss_mib": 91.375,
+  "api_heap_high_water_mib": 29.055557250976562,
+  "api_average_cpu_percent": 0.18163154480843213,
+  "browser_average_cpu_percent": 184.95039583333335,
+  "browser_rss_upper_bound_mib": 942.703125,
+  "browser_page_heap_high_water_mib": 9.553447723388672,
+  "api_throughput_ops_sec": 0.04057006127007568,
+  "api_throughput_input_bytes_sec": 2209.2021164007015,
+  "stages": {
+    "inspection.pdf-objects": {
+      "count": 1,
+      "cumulative_ms": 203.5,
+      "latency_ms": {
+        "count": 1,
+        "p50": 203.5,
+        "p95": 203.5,
+        "p99": 203.5,
+        "p99_9": 203.5,
+        "p99_99": 203.5,
+        "max": 203.5,
+        "mean": 203.5,
+        "cv": 0.0,
+        "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+      }
+    },
+    "inspection.barcode": {
+      "count": 13,
+      "cumulative_ms": 1427.1000001430511,
+      "latency_ms": {
+        "count": 13,
+        "p50": 91.60000002384186,
+        "p95": 221.40000009536743,
+        "p99": 221.40000009536743,
+        "p99_9": 221.40000009536743,
+        "p99_99": 221.40000009536743,
+        "max": 221.40000009536743,
+        "mean": 109.77692308792702,
+        "cv": 0.36625228745006505,
+        "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+      }
+    },
+    "inspection.ocr-init": {
+      "count": 2,
+      "cumulative_ms": 723.7999999523163,
+      "latency_ms": {
+        "count": 2,
+        "p50": 338.6999999284744,
+        "p95": 385.10000002384186,
+        "p99": 385.10000002384186,
+        "p99_9": 385.10000002384186,
+        "p99_99": 385.10000002384186,
+        "max": 385.10000002384186,
+        "mean": 361.89999997615814,
+        "cv": 0.06410610679528081,
+        "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+      }
+    },
+    "inspection.ocr-recognize": {
+      "count": 13,
+      "cumulative_ms": 25215.300000190735,
+      "latency_ms": {
+        "count": 13,
+        "p50": 1986.8999999761581,
+        "p95": 3019.2000000476837,
+        "p99": 3019.2000000476837,
+        "p99_9": 3019.2000000476837,
+        "p99_99": 3019.2000000476837,
+        "max": 3019.2000000476837,
+        "mean": 1939.6384615531335,
+        "cv": 0.3231125629830131,
+        "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+      }
+    },
+    "inspection.pdf-render": {
+      "count": 12,
+      "cumulative_ms": 300.8000000715256,
+      "latency_ms": {
+        "count": 12,
+        "p50": 20.5,
+        "p95": 54.300000071525574,
+        "p99": 54.300000071525574,
+        "p99_9": 54.300000071525574,
+        "p99_99": 54.300000071525574,
+        "max": 54.300000071525574,
+        "mean": 25.066666672627132,
+        "cv": 0.5232235408388006,
+        "extreme_tail_note": "20 samples: p99 and higher are observed max, not population-tail guarantees"
+      }
+    }
+  },
+  "first10_inspection_p95": 14587.128749999974,
+  "last10_inspection_p95": 16631.275208999985,
+  "scope": "20 cold-context inspections with provider-auth failures plus 20 successful-provider-path API replays; they are separate stage measurements, not 20 public full-browser successes"
+}
