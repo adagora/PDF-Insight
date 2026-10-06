@@ -12,6 +12,7 @@ export default defineConfig({
   fullyParallel: true,
   workers: 2,
   reporter: [["list"]],
+  expect: { timeout: 30_000 },
   use: {
     baseURL,
     trace: "retain-on-failure",

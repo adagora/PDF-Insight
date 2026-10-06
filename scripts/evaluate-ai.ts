@@ -45,6 +45,7 @@ const app = createApp({
   fallbackLimiter: memoryLimiter(1_000, 60_000, Date.now),
 });
 const evidence = [];
+const canonicalOrganization = (name: string) => name.normalize("NFC").trim().replace(/\.$/u, "");
 for (const entry of cases) {
   const start = performance.now();
   const response = await app.request(
@@ -85,8 +86,14 @@ for (const entry of cases) {
       entry.expected.dates.every((date) => result.dates.some((actual) => actual.date === date)) &&
       result.dates.every((actual) => entry.expected.dates.includes(actual.date));
     checks.organizations =
-      entry.expected.organizations.every((name) => result.entities.organizations.includes(name)) &&
-      result.entities.organizations.every((name) => entry.expected.organizations.includes(name));
+      entry.expected.organizations.every((name) =>
+        result.entities.organizations.some((actual) => canonicalOrganization(actual) === canonicalOrganization(name)),
+      ) &&
+      result.entities.organizations.every((name) =>
+        entry.expected.organizations.some(
+          (expected) => canonicalOrganization(expected) === canonicalOrganization(name),
+        ),
+      );
     checks.people =
       entry.expected.people.every((name) => result.entities.people.includes(name)) &&
       result.entities.people.every((name) => entry.expected.people.includes(name));

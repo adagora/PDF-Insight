@@ -81,7 +81,7 @@ From the project root, with dependencies installed:
 
 ```bash
 cd apps/api
-export CLOUDFLARE_ACCOUNT_ID=<your-account-id>
+export CLOUDFLARE_ACCOUNT_ID="your-account-id"
 npx wrangler login
 npx wrangler deploy --dry-run
 npx wrangler deploy

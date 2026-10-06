@@ -1,0 +1,140 @@
+[
+  {
+    "name": "Polish invoice with VAT and an explicit due date",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 274,
+    "observedOrganizations": ["Alfa sp. z o.o.", "Beta S.A."],
+    "observedPeople": [],
+    "ms": 5675.529834,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "English offer with an amount and a relative delivery period",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 282,
+    "observedOrganizations": ["Acme Ltd", "Northwind Ltd"],
+    "observedPeople": [],
+    "ms": 3953.2770419999997,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "German report with percentages and counts but no money",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 229,
+    "observedOrganizations": ["Beispiel GmbH"],
+    "observedPeople": [],
+    "ms": 3751.782833000001,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "French agreement with an explicitly named person",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 280,
+    "observedOrganizations": ["Exemple SARL"],
+    "observedPeople": ["Marie Dupont"],
+    "ms": 4250.38825,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "Sparse Polish note with missing dates, organizations, people and money",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 171,
+    "observedOrganizations": [],
+    "observedPeople": [],
+    "ms": 8672.215334,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  },
+  {
+    "name": "Polish invoice with a long service appendix",
+    "model": "gemini-3.8-flash",
+    "status": 200,
+    "errorCode": null,
+    "sourceChars": 14862,
+    "observedOrganizations": ["Alfa sp. z o.o.", "Beta S.A."],
+    "observedPeople": [],
+    "ms": 5513.815125000001,
+    "checks": {
+      "http200": true,
+      "schema": true,
+      "language": true,
+      "type": true,
+      "mainDate": true,
+      "amounts": true,
+      "dates": true,
+      "organizations": true,
+      "people": true,
+      "summaryFacts": true
+    },
+    "passed": true
+  }
+]

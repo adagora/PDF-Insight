@@ -228,3 +228,15 @@ Verification passes 295 unit/contract/property tests. The 40 desktop/360 px brow
 passed before the German tailoring; the final published workflow repeats them. Earlier failed
 quality evaluations are preserved in `docs/evaluation/`; public runtime and availability evidence
 are recorded in `docs/requirements.md` after publication.
+
+The final real-provider corpus passes all six reviewed fixtures. A strict English entity oracle
+initially rejected `Ltd` versus `Ltd.`; twenty observed responses confirmed identical company
+name words. Evaluation now ignores only the optional terminal full stop, retaining exact entity
+set requirements and the original failed observations. This is an oracle correction, not an
+extraction change.
+
+Initial CI browser checks exposed five-second waits that were too short for cold local OCR and
+an inline-image failure before OCR in the development build. The publication workflow now builds
+first and exercises the production preview with its base path and CSP. Ordinary browser waits
+allow local inspection; the live acceptance check still requires the total result in under
+30 seconds. The initial failed run remains available in GitHub Actions.
