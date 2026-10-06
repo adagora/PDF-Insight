@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 
 import { expect, test, type Page } from "@playwright/test";
@@ -238,7 +238,9 @@ test("inspects an inline image at original resolution when its rendered size is 
     await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(analysisFixture()) });
   });
   const bytes = await pdf.save();
-  await info.attach("inline-image-fixture", { body: Buffer.from(bytes), contentType: "application/pdf" });
+  const fixturePath = info.outputPath("inline-image-fixture.pdf");
+  await writeFile(fixturePath, bytes);
+  await info.attach("inline-image-fixture", { path: fixturePath, contentType: "application/pdf" });
   expect((await inspectPdfObjects(bytes)).images).toHaveLength(1);
   await upload(page, bytes);
   await expect(page.locator(".result")).toBeVisible({ timeout: 90_000 });

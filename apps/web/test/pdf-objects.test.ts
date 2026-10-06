@@ -19,6 +19,18 @@ describe("PDF object inspection before forwarding", () => {
     expect(JSON.stringify(result)).not.toContain(SECRET);
   });
 
+  it("inspects large strings completely without overflowing the decoder call stack", async () => {
+    const pdf = await PDFDocument.create();
+    pdf.addPage();
+    const text = `${"a".repeat(500_000)} ${SECRET} ${"b".repeat(500_000)}`;
+    pdf.context.register(PDFString.of(text));
+    pdf.context.register(pdf.context.flateStream(`(${text})`));
+    const result = await inspectPdfObjects(await pdf.save());
+    expect(result.findings.find((finding) => finding.kind === "aws-access-key-id")?.count).toBeGreaterThanOrEqual(2);
+    expect(result.decodedBytes).toBeGreaterThan(2_000_000);
+    expect(JSON.stringify(result)).not.toContain(SECRET);
+  });
+
   it("rejects uninspectable image filters and active content", async () => {
     const pdf = await PDFDocument.create();
     pdf.addPage();

@@ -23,7 +23,7 @@ Browser: validated result → display, download, local result history
 | `apps/web`             | React 19 + Vite 8 SPA (`src/components`, `src/lib`, `src/api`)                         |
 | `apps/api`             | Hono on Cloudflare Workers; OpenAPI generated from the routes                          |
 | `packages/shared`      | Zod schemas (the single source of truth), limits, secret patterns                      |
-| `docs/adr`             | 24 Architecture Decision Records — start at [`docs/adr/README.md`](docs/adr/README.md) |
+| `docs/adr`             | 25 Architecture Decision Records — start at [`docs/adr/README.md`](docs/adr/README.md) |
 | `docs/requirements.md` | Brief requirement → implementation → test, row by row                                  |
 
 ### Key decisions (details in the ADRs)

@@ -16,6 +16,7 @@ import { PdfObjectsSchema, PDF_OBJECT_CAPACITY, type PdfObjects, type PdfObjectC
 import { decodeImage } from "./pdf-raster";
 import { discoverEmbeddedFiles } from "./pdf-embedded-files";
 import { readInlineImages, contentStreams } from "./pdf-inline-images";
+import { decodePdfString } from "./pdf-string";
 
 function streamStrings(text: string): string[] {
   const strings: string[] = [];
@@ -28,11 +29,11 @@ function streamStrings(text: string): string[] {
         else if (text[at] === "(") depth += 1;
         else if (text[at] === ")") depth -= 1;
       }
-      if (depth === 0) strings.push(PDFString.of(text.slice(start, at)).decodeText());
+      if (depth === 0) strings.push(decodePdfString(PDFString.of(text.slice(start, at))));
     } else if (text[at] === "<" && text[at + 1] !== "<") {
       const end = text.indexOf(">", at + 1);
       if (end > at && /^[\da-fA-F\s]+$/.test(text.slice(at + 1, end))) {
-        strings.push(PDFHexString.of(text.slice(at + 1, end).replace(/\s/g, "")).decodeText());
+        strings.push(decodePdfString(PDFHexString.of(text.slice(at + 1, end).replace(/\s/g, ""))));
         at = end;
       }
     }
@@ -76,8 +77,8 @@ export async function inspectPdfObjects(
     seen.add(object);
     if (depth > 50 || seen.size > LIMITS.maxPdfObjects) throw new InspectionError("INSPECTION_LIMIT");
     if (object instanceof PDFInvalidObject) throw new InspectionError("INSPECTION_FAILED");
-    if (object instanceof PDFString || object instanceof PDFHexString || object instanceof PDFName)
-      inspect(object.decodeText());
+    if (object instanceof PDFString || object instanceof PDFHexString) inspect(decodePdfString(object));
+    else if (object instanceof PDFName) inspect(object.decodeText());
     else if (object instanceof PDFArray) for (const child of object.asArray()) visit(child, depth + 1);
     else if (object instanceof PDFDict) {
       for (const [key, value] of object.entries()) {

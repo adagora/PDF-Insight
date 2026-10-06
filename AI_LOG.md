@@ -236,7 +236,15 @@ set requirements and the original failed observations. This is an oracle correct
 extraction change.
 
 Initial CI browser checks exposed five-second waits that were too short for cold local OCR and
-an inline-image failure before OCR in the development build. The publication workflow now builds
+an inline-image failure before OCR on Linux. The publication workflow now builds
 first and exercises the production preview with its base path and CSP. Ordinary browser waits
 allow local inspection; the live acceptance check still requires the total result in under
 30 seconds. The initial failed run remains available in GitHub Actions.
+
+The remaining Linux failure reproduced in a direct decoder check: a long string-like span in
+inline-image bytes overflowed the library's single character-conversion call. ADR-0025 replaces
+that conversion with bounded PDFDocEncoding chunks and standard BOM-aware UTF-16 decoding.
+Every admitted byte is retained; raw stream inspection and original-image OCR still run.
+Regression checks cover million-character strings with a marker in the middle, all encoding
+mappings, escapes and long Unicode surrogate-pair text. The synthetic browser fixture is retained
+as a file and tested through both the decoder and the complete browser workflow.
