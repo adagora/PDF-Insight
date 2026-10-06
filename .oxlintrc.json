@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "jsPlugins": ["./tools/oxlint/aw-type-evidence/index.ts"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "aw-type-evidence/require-safety-comment-for-type-assertion": "error",
+    "aw-type-evidence/no-chained-type-assertions": "error",
+    "aw-type-evidence/no-widen-then-assert": "error",
+    "aw-type-evidence/no-unknown-returns": "error",
+    "aw-type-evidence/no-unknown-parameters": "error",
+    "aw-type-evidence/no-unknown-type-aliases": "error",
+    "aw-type-evidence/no-unsafe-dictionary-type": "error",
+    "aw-type-evidence/no-reflect-get": "error",
+    "aw-type-evidence/no-reflect-apply": "error",
+    "aw-type-evidence/no-module-mocking": "error",
+    "aw-type-evidence/no-object-parameters": "error",
+    "aw-type-evidence/no-conditional-empty-object-spread": "error",
+    "aw-type-evidence/no-known-value-widening": "error",
+    "aw-type-evidence/no-runtime-typeof": "error",
+    "aw-type-evidence/no-shape-in-symbol-names": "error"
+  },
+  "ignorePatterns": [
+    "**/dist/**",
+    "apps/web/public/inspection/**",
+    "**/.wrangler/**",
+    "tools/**",
+    "docs/**",
+    "node_modules/**"
+  ]
+}

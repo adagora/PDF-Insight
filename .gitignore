@@ -1,0 +1,34 @@
+# Secrets — never commit (ADR-0008). Use .env.example as the template.
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Dependencies and build output
+node_modules/
+dist/
+.wrangler/
+coverage/
+test-results/
+playwright-report/
+apps/web/public/inspection/
+*.tsbuildinfo
+
+# Local inputs and brief sources (not part of the product)
+raw/
+.brief-corpus/
+markdown_extractions/
+Brief_Vibe_Coder_PDF_Insight.pdf
+
+# OS / editor
+.DS_Store
+:memory:.ses
+availability.json
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea/
+markdown_extractions/
+Brief_Vibe_Coder_PDF_Insight.pdf

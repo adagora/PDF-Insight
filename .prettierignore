@@ -1,0 +1,13 @@
+node_modules
+**/dist
+apps/web/public/inspection
+**/.wrangler
+coverage
+test-results
+playwright-report
+docs/api
+tools
+raw
+markdown_extractions
+.brief-corpus
+package-lock.json

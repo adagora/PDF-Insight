@@ -1,0 +1,58 @@
+{
+  "name": "pdf-insight",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "PDF Insight — upload a PDF, get a short summary and structured JSON data.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm run dev:api & npm run dev:web",
+    "dev:api": "npm run dev -w @pdf-insight/api",
+    "dev:web": "npm run inspection:assets && npm run dev -w @pdf-insight/web",
+    "build": "npm run inspection:assets && npm run build -w @pdf-insight/web",
+    "inspection:assets": "tsx scripts/prepare-inspection-assets.ts",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc -p tsconfig.json",
+    "lint": "eslint . --max-warnings=0 && npm run lint:types && prettier --check .",
+    "lint:types": "oxlint -c .oxlintrc.json --deny-warnings apps packages scripts e2e",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "docs:api": "tsx apps/api/scripts/gen-openapi.ts --write",
+    "docs:api:check": "tsx apps/api/scripts/gen-openapi.ts --check",
+    "check:adr": "tsx scripts/check-adr.ts",
+    "check:secrets": "tsx scripts/check-secrets.ts",
+    "check:build": "tsx scripts/check-build.ts",
+    "smoke": "tsx scripts/smoke.ts",
+    "verify": "npm run typecheck && npm run lint && npm run check:comments && npm run check:adr && npm run docs:api:check && npm test && npm run build && npm run check:build && npm run check:secrets",
+    "prepare": "git config core.hooksPath .githooks || true",
+    "check:comments": "tsx scripts/check-comments.ts",
+    "test:e2e": "playwright test e2e/app.spec.ts e2e/inspection.spec.ts",
+    "test:e2e:live": "E2E_LIVE=1 playwright test e2e/live.spec.ts --workers=1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@oxlint/plugins": "^1.87.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "fast-check": "^4.10.2",
+    "globals": "^17.13.0",
+    "oxlint": "^1.87.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.0",
+    "vitest": "^4.0.0"
+  }
+}
