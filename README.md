@@ -5,6 +5,12 @@ points) as validated JSON. PDFs are inspected locally before redacted text reach
 
 **Demo:** [adagora.github.io/PDF-Insight](https://adagora.github.io/PDF-Insight/) · **API docs:** [`docs/api/API.md`](docs/api/API.md)
 
+Verification: 298 unit/contract/property tests, 40 desktop/mobile browser checks and six reviewed
+real-provider fixtures pass. Twenty fresh public uploads returned valid results; 19 finished
+within 30 seconds (p95 29.1 s, maximum 41.0 s). See [requirements and limits](docs/requirements.md)
+and [performance evidence](docs/performance/2026-10-06/README.md). Long-term reliability remains
+under observation.
+
 ![PDF Insight — analysis of the 12-page test contract](docs/screenshots/result-desktop.png)
 
 ## How it works

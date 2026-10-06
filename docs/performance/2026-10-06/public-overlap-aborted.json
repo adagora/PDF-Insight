@@ -1,0 +1,42 @@
+{
+  "excludedFromComparison": true,
+  "reason": "A smoke browser overlapped the initial timing cohort. The cohort was stopped after noticing the overlap. Run 2 is caller cancellation, not an application failure. A fresh 20-run cohort follows without other browser work.",
+  "samples": [
+    {
+      "run": 1,
+      "viewport": "desktop",
+      "visible": true,
+      "status": 200,
+      "valid": true,
+      "totalMs": 26324.627708,
+      "extractedMs": 18396.01875,
+      "apiMs": 7928.608958000001,
+      "citationIssues": 0,
+      "amounts": 40,
+      "dates": 29,
+      "annex": true,
+      "injectionFlag": true,
+      "injectedAmount": false,
+      "underBudget": true,
+      "requestBytes": 54454
+    },
+    {
+      "run": 2,
+      "viewport": "mobile-360",
+      "visible": false,
+      "status": 0,
+      "valid": false,
+      "totalMs": 6995.404624999996,
+      "extractedMs": 0,
+      "apiMs": 0,
+      "citationIssues": null,
+      "amounts": 0,
+      "dates": 0,
+      "annex": false,
+      "injectionFlag": false,
+      "injectedAmount": false,
+      "underBudget": false,
+      "errorName": "Error"
+    }
+  ]
+}

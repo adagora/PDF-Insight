@@ -53,7 +53,7 @@ not the tab cache, to demonstrate the public acceptance budget.
 Scaling is not extrapolated from the 12-page measurement. Full OCR applies to every admitted
 page; 100 pages is the inspection ceiling, and 500/1,000-page browser inputs are rejected.
 One-page quality cases are separately recorded by the evaluator. No unmeasured 10/50/100-page
-p95 ratios are claimed. Remote/public browser delivery is a separate final validation step.
+p95 ratios are claimed. Remote/public browser delivery is measured separately below.
 
 ## Measured changes
 
@@ -82,6 +82,48 @@ Final replay throughput is 0.1273 ops/s; it excludes browser inspection and Clou
 The last few final samples overlapped static verification; this host was not CPU-pinned or fully
 isolated. Remote wait dominates these calls, while public browser checks establish the total budget.
 The 20-sample maximum is a conservative observed tail, not a population p99 estimate.
+
+## Published application measurements
+
+The production Pages build at `fbf1315` and the deployed Worker were measured with 20 sequential
+uploads of the same contract. Each run starts a fresh Chromium process/context and alternates
+desktop 1366×900 with mobile 360×780. Browser requests use the public Worker directly with native
+CORS; no route proxy, tab cache, test/build workload or profiling instrumentation is used.
+The OS filesystem remains warm and ordinary host activity remains possible. The scenario and
+source/build identifiers are in [public-scenario.json](public-scenario.json).
+
+| Measurement                        | Result                                                       |
+| ---------------------------------- | ------------------------------------------------------------ |
+| Visible, schema-valid results      | 20/20                                                        |
+| Upload-to-result latency           | p50 25.433 s; p95 29.105 s; maximum 41.013 s                 |
+| Under 30 seconds                   | 19/20; desktop 9/10, mobile emulation 10/10                  |
+| Local inspection/preparation       | p50 16.823 s; p95 19.786 s; maximum 21.123 s                 |
+| API request through final display  | p50 7.765 s; p95 12.273 s; maximum 23.650 s                  |
+| Source-linked amount/date contexts | No invalid citations in any result                           |
+| Annex and injection                | All retain 13,100 PLN and flag injection; none extract 1 PLN |
+| Extracted counts                   | 40 amounts in all results; 29 dates in 18, 28 dates in two   |
+
+All [samples](public-samples.json) are retained, including the slow seventeenth run.
+[public-summary.json](public-summary.json) includes per-viewport and first/last-ten distributions.
+The slow run spent 17.363 s before the API request and 23.650 s from that request to display;
+these intervals establish where the delay occurred, without identifying its provider/runtime
+cause. With only twenty observations, p99 equals the maximum and is not a population estimate.
+Ten samples per viewport are also insufficient to characterize platform tails. Date-count
+variation and valid citations do not establish exhaustive extraction.
+
+The combined cohort's p95 is under the target, but its 41-second result means the application
+does not reliably meet the 30-second acceptance target. Physical phones, Safari, slower networks,
+concurrent users and larger inputs remain unmeasured. A first timing cohort overlapped a separate
+smoke browser; it was stopped and excluded before this complete cohort began. Both its completed
+sample and caller cancellation are retained in [public-overlap-aborted.json](public-overlap-aborted.json).
+
+The published supplied-PDF smoke and live desktop/mobile checks pass. The availability checker
+initially failed its real-analysis check after 28.796 s while assets, health and CORS passed;
+the follow-up passed in 11.102 s, with analysis taking 10.763 s. Both
+[initial](initial-public-check.json) and [follow-up](final-public-check.json) observations are
+retained. The original artifact did not record HTTP status/error code, so it cannot establish the
+failure cause. The checker now records both without response content. The six-hourly workflow
+begins observation; a 14-day availability claim still requires fourteen days of evidence.
 
 ## Reproduce
 

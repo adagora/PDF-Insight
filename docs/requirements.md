@@ -6,18 +6,18 @@ requirements. Updated delivery and runtime evidence is recorded below.
 
 ## Functional
 
-| ID   | Pri    | Requirement                                                     | Implementation                                                                                                                        | Proof                                                                              |
-| ---- | ------ | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| F-01 | MUST   | Drag & drop and file picker; PDF only; ≤ 10 MB                  | `UploadPanel.tsx`, `lib/file-validation.ts` (MIME/extension + `%PDF-` magic bytes)                                                    | `file-validation.test.ts`; e2e "rejects a non-PDF", "renamed .pdf"                 |
-| F-02 | MUST   | Text extraction from PDFs with a text layer                     | `lib/pdf.ts` (pdf.js), `shared/pdf-text.ts` (column-aware joining)                                                                    | `pdf-text.test.ts`; live e2e                                                       |
-| F-03 | MUST   | 3–5 sentence summary in the document language, nothing invented | Unicode sentence validation at AI/public/history boundaries; reviewed language fixtures; source-page excerpts (ADRs 0018, 0020, 0023) | `analyze.test.ts`; `citations.test.ts`; `npm run smoke`                            |
-| F-04 | MUST   | §04 schema, validated before display                            | `shared/schema.ts`; `parseAnalysis` on server and in the browser; `ValidatedAnalysis` proof                                           | `schema.test.ts`; contract tests; e2e "fails schema validation is never displayed" |
-| F-05 | MUST   | Readable results, JSON preview, `.json` download                | `ResultView.tsx`, `JsonPreview.tsx`, `downloadJson`                                                                                   | e2e happy path (download parsed and checked)                                       |
-| F-06 | MUST   | Loading, error with retry, empty state                          | `ProgressPanel`, `ErrorPanel`, home empty state                                                                                       | e2e: API error + retry, network failure                                            |
-| F-07 | MUST   | Public demo on GitHub Pages                                     | `.github/workflows/ci.yml` (`deploy-pages`), `VITE_BASE`                                                                              | **Not delivered**: intended demo returns HTTP 404; Pages API returns 404           |
-| F-08 | SHOULD | Chunk long documents and merge                                  | `chunking.ts`, `merge.ts`, synthesis call (ADR-0009)                                                                                  | `chunking.test.ts` (properties), long-document test                                |
-| F-09 | SHOULD | Recent results in local storage                                 | `lib/history.ts` (Zod-validated on read)                                                                                              | `history.test.ts`; e2e history                                                     |
-| F-10 | COULD  | OCR for scans                                                   | Local Tesseract OCR, original images and every rendered page (ADR-0015)                                                               | OCR test; live e2e reads the scanned annex                                         |
+| ID   | Pri    | Requirement                                                     | Implementation                                                                                                                        | Proof                                                                               |
+| ---- | ------ | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| F-01 | MUST   | Drag & drop and file picker; PDF only; ≤ 10 MB                  | `UploadPanel.tsx`, `lib/file-validation.ts` (MIME/extension + `%PDF-` magic bytes)                                                    | `file-validation.test.ts`; e2e "rejects a non-PDF", "renamed .pdf"                  |
+| F-02 | MUST   | Text extraction from PDFs with a text layer                     | `lib/pdf.ts` (pdf.js), `shared/pdf-text.ts` (column-aware joining)                                                                    | `pdf-text.test.ts`; live e2e                                                        |
+| F-03 | MUST   | 3–5 sentence summary in the document language, nothing invented | Unicode sentence validation at AI/public/history boundaries; reviewed language fixtures; source-page excerpts (ADRs 0018, 0020, 0023) | `analyze.test.ts`; `citations.test.ts`; `npm run smoke`                             |
+| F-04 | MUST   | §04 schema, validated before display                            | `shared/schema.ts`; `parseAnalysis` on server and in the browser; `ValidatedAnalysis` proof                                           | `schema.test.ts`; contract tests; e2e "fails schema validation is never displayed"  |
+| F-05 | MUST   | Readable results, JSON preview, `.json` download                | `ResultView.tsx`, `JsonPreview.tsx`, `downloadJson`                                                                                   | e2e happy path (download parsed and checked)                                        |
+| F-06 | MUST   | Loading, error with retry, empty state                          | `ProgressPanel`, `ErrorPanel`, home empty state                                                                                       | e2e: API error + retry, network failure                                             |
+| F-07 | MUST   | Public demo on GitHub Pages                                     | `.github/workflows/ci.yml` (`deploy-pages`), `VITE_BASE`                                                                              | [Live demo](https://adagora.github.io/PDF-Insight/); public smoke and live e2e pass |
+| F-08 | SHOULD | Chunk long documents and merge                                  | `chunking.ts`, `merge.ts`, synthesis call (ADR-0009)                                                                                  | `chunking.test.ts` (properties), long-document test                                 |
+| F-09 | SHOULD | Recent results in local storage                                 | `lib/history.ts` (Zod-validated on read)                                                                                              | `history.test.ts`; e2e history                                                      |
+| F-10 | COULD  | OCR for scans                                                   | Local Tesseract OCR, original images and every rendered page (ADR-0015)                                                               | OCR test; live e2e reads the scanned annex                                          |
 
 ## Schema rules (§04)
 
@@ -58,23 +58,33 @@ A visitor opens the demo, uploads a supported PDF, sees the summary and data wit
 and downloads schema-valid JSON. Complete inspection remains mandatory: unsupported or incomplete
 inputs fail before the API request rather than omit content to meet the timing target.
 
-| Area                       | Implementation and verification                                                                                                                     | Status                                                                          |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| F-01–F-06, F-09            | File validation, responsive results/export, error/retry, validated history; unit and desktop/360 px browser coverage                                | Implemented                                                                     |
-| F-03/F-04 boundaries       | Registered language membership; 3–5 actual Unicode sentences; invalid AI output retries once; public/browser/history reject invalid data            | Implemented; ADR-0020                                                           |
-| F-07 and public repository | Pages configuration, production API URL and Actions workflow; publication and public checks                                                         | Final publication pending                                                       |
-| F-08                       | Page-aligned chunks, merging and synthesis; property tests and complete mocked long-document API flow                                               | Implemented; large-document real-provider scaling not established               |
-| F-10                       | Local OCR of every rendered page and supported original image; scanned-annex evidence                                                               | Implemented within inspection budgets                                           |
-| Reviewed AI quality        | Polish invoice, English offer, German report, French agreement, sparse note and long invoice appendix; exact facts/entities and missing-data checks | PASS: six reviewed real-provider cases; original failures retained              |
-| Performance                | 20 browser inspections and 20 API baseline calls; ranked bottlenecks; concurrent extraction and source-copied contexts                              | API p95 28.005 → 9.873 s; public total latency still pending                    |
-| Continuous availability    | Six-hourly public assets, CORS, health and real analysis checks; dated workflow artifacts retained for 30 days                                      | Observation begins after publication; 14 days cannot be established immediately |
+| Area                       | Implementation and verification                                                                                                                     | Status                                                                     |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| F-01–F-06, F-09            | File validation, responsive results/export, error/retry, validated history; unit and desktop/360 px browser coverage                                | Implemented                                                                |
+| F-03/F-04 boundaries       | Registered language membership; 3–5 actual Unicode sentences; invalid AI output retries once; public/browser/history reject invalid data            | Implemented; ADR-0020                                                      |
+| F-07 and public repository | Pages configuration, production API URL and Actions workflow; public smoke and live desktop/mobile checks                                           | Published; Linux CI passes 298 tests and 40 browser checks                 |
+| F-08                       | Page-aligned chunks, merging and synthesis; property tests and complete mocked long-document API flow                                               | Implemented; large-document real-provider scaling not established          |
+| F-10                       | Local OCR of every rendered page and supported original image; scanned-annex evidence                                                               | Implemented within inspection budgets                                      |
+| Reviewed AI quality        | Polish invoice, English offer, German report, French agreement, sparse note and long invoice appendix; exact facts/entities and missing-data checks | PASS: six reviewed real-provider cases; original failures retained         |
+| Performance                | 20 browser inspections and 20 API baseline calls; optimizations; 20 fresh public desktop/mobile uploads                                             | Public 20/20 valid; 19/20 under 30 s; p95 29.105 s, maximum 41.013 s       |
+| Continuous availability    | Six-hourly public assets, CORS, health and real analysis checks; dated workflow artifacts retained for 30 days                                      | Initial check failed; follow-up passed; 14-day observation remains pending |
 
 ## Evidence and limits
 
 The baseline exposed a real latency failure: a 38.7-second smoke, a 38.479-second desktop result
 and a mobile API timeout. These are retained in the performance report alongside all candidate
-measurements. Final publication checks must exercise the public API and assets, rather than
-infer delivery from mocks or a packaged Worker.
+measurements. Final checks exercised the published Pages assets and Worker with native browser
+requests and CORS: the supplied-PDF smoke and both live desktop/mobile checks passed. The Linux
+[publication workflow](https://github.com/adagora/PDF-Insight/actions/runs/37445721525) passed
+298 unit/contract/property tests and 40 browser checks.
+
+Twenty fresh public uploads all returned visible, schema-valid results with valid amount/date
+citations, the scanned-annex amount and the injection warning. Nineteen completed within
+30 seconds; one took 41.013 seconds. Date counts varied between 28 and 29. The latency target
+is therefore not reliably satisfied, and source validity does not establish complete extraction.
+The public availability checker initially failed its real-analysis check and passed a later
+check. Long-term reliability, distributed abuse controls and a global provider spending cap
+remain production-readiness work; publication and passing tests do not establish an SLA.
 
 Sentence validation counts Unicode sentence boundaries, not just array entries. Reviewed fixture
 expectations and the scanned contract complement structural checks; they do not prove all possible

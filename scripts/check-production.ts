@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 
-import { HealthSchema, parseAnalysis } from "@pdf-insight/shared";
+import { ApiErrorSchema, HealthSchema, parseAnalysis } from "@pdf-insight/shared";
 import { z } from "zod";
 
 const { values } = parseArgs({
@@ -31,6 +31,7 @@ const preflight = await fetch(`${options.api}/v1/analyze`, {
   },
   signal: AbortSignal.timeout(15000),
 });
+const analysisStarted = performance.now();
 const response = await fetch(`${options.api}/v1/analyze`, {
   method: "POST",
   headers: { "Content-Type": "application/json", Origin: origin },
@@ -46,7 +47,10 @@ const response = await fetch(`${options.api}/v1/analyze`, {
   }),
   signal: AbortSignal.timeout(35000),
 });
-const parsed = parseAnalysis(await response.json());
+const analysisMs = performance.now() - analysisStarted;
+const payload: unknown = await response.json().catch(() => null);
+const parsed = parseAnalysis(payload);
+const apiError = ApiErrorSchema.safeParse(payload);
 const checks = {
   web: web.ok,
   script: assetResponse?.ok === true,
@@ -67,6 +71,9 @@ const evidence = {
   web: options.web,
   api: options.api,
   ms: performance.now() - started,
+  analysisMs,
+  status: response.status,
+  errorCode: apiError.success ? apiError.data.error.code : null,
   checks,
   requestId: response.headers.get("x-request-id"),
   passed: Object.values(checks).every(Boolean),

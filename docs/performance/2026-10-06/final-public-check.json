@@ -1,0 +1,20 @@
+{
+  "observedAt": "2026-10-06T10:10:47.071Z",
+  "web": "https://adagora.github.io/PDF-Insight/",
+  "api": "https://pdf-insight-api.a-gora.workers.dev",
+  "ms": 11102.269333,
+  "analysisMs": 10762.794415999999,
+  "status": 200,
+  "errorCode": null,
+  "checks": {
+    "web": true,
+    "script": true,
+    "health": true,
+    "preflightCors": true,
+    "analysisCors": true,
+    "analysis": true,
+    "missingFacts": true
+  },
+  "requestId": "9265ef4b-8677-47fa-aa7c-32434229e603",
+  "passed": true
+}

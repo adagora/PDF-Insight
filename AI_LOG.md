@@ -248,3 +248,21 @@ Every admitted byte is retained; raw stream inspection and original-image OCR st
 Regression checks cover million-character strings with a marker in the middle, all encoding
 mappings, escapes and long Unicode surrogate-pair text. The synthetic browser fixture is retained
 as a file and tested through both the decoder and the complete browser workflow.
+
+## Published runtime verification (2026-10-06)
+
+Final local verification and Linux publication CI pass 298 unit/contract/property tests and
+40 desktop/360 px browser checks. The published Pages site and Worker pass the supplied-PDF
+smoke and both live browser checks. Six reviewed real-provider fixtures pass.
+
+Twenty fresh public Chromium uploads all return visible, schema-valid results with valid linked
+contexts, the scanned-annex amount and the injection warning. Nineteen complete within 30 seconds:
+p50 25.433 s, p95 29.105 s, maximum 41.013 s. Two results contain 28 dates rather than the more
+common 29; citation validity does not prove exhaustive extraction. The slow run remains in the
+report. A separate first cohort accidentally overlapped a smoke browser; it was stopped, retained
+as excluded evidence and replaced with a complete isolated cohort.
+
+The first public availability check failed the real analysis while assets, health and CORS
+passed. A follow-up passed. The initial evidence lacked status/error diagnostics; the checker now
+records validated error codes and HTTP status without response content. Long-term observation,
+provider latency reliability and distributed abuse/cost controls remain production work.

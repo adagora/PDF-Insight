@@ -1,0 +1,32 @@
+{
+  "web": "https://adagora.github.io/PDF-Insight/",
+  "runs": 20,
+  "pdfSha256": "60feaf2988d77897e42c022a449c21580baa17edfff412d86839d6565500d313",
+  "inputBytes": 568912,
+  "concurrency": 1,
+  "cache": "new Chromium process/context for every run; no tab or HTTP cache; OS filesystem warm",
+  "network": "public GitHub Pages and Worker; native browser fetch and CORS; no request routing",
+  "viewports": "alternating desktop 1366x900 and mobile 360x780",
+  "isolation": "no builds/tests during run; ordinary host activity remains",
+  "budgetMs": 30000,
+  "limitations": [
+    "Chromium mobile emulation on M1, not physical-device hardware",
+    "Twenty samples do not establish population tails or long-term availability"
+  ],
+  "gitSha": "fbf13151bd729fe05b417e899dd7258a1c234813",
+  "publicationWorkflow": "https://github.com/adagora/PDF-Insight/actions/runs/37445721525",
+  "workerVersion": "ce50f18b-3b76-407c-8a57-a462b531cde5",
+  "build": {
+    "profile": "Vite production on GitHub Actions",
+    "sourceMaps": false,
+    "inspectionProfiling": false
+  },
+  "sourceSha256": {
+    "apps/api/src/lib/extraction.ts": "b0e602fadd307a864164e718fe14aac68b3b556d49ee56c54ccdba87faa51edf",
+    "apps/api/src/lib/source-context.ts": "3a1fa827a9234a5ca827cb419aa52745a0d9a09bcc2cc8e1018ba8d087a04404",
+    "packages/shared/src/sentences.ts": "1a2b427fca96bf98009902831276d756a4f3b657cb55e169f40852e4bac24b73",
+    "apps/web/src/lib/pdf-string.ts": "233eb4a09bc87b47b1a6c096e0eae6ee3e24037f74221fa2025fecf05ba9aff9"
+  },
+  "completedAt": "2026-10-06T10:09:26.094857+00:00",
+  "hostFingerprint": "fingerprint.json; same M1 host and Node toolchain; production build differs as recorded above"
+}

@@ -1,0 +1,136 @@
+{
+  "samples": 20,
+  "validatedVisibleResults": 20,
+  "under30000Ms": 19,
+  "citationFailures": 0,
+  "allRetainAnnexAmount": true,
+  "allFlagInjection": true,
+  "anyInjectedAmount": false,
+  "amountCounts": {
+    "40": 20
+  },
+  "dateCounts": {
+    "28": 2,
+    "29": 18
+  },
+  "latency": {
+    "totalMs": {
+      "n": 20,
+      "p50Ms": 25433.019415999996,
+      "p95Ms": 29105.25350000005,
+      "p99Ms": 41013.379000000015,
+      "maxMs": 41013.379000000015,
+      "meanMs": 26347.1917542,
+      "coefficientOfVariation": 0.1454648770606583
+    },
+    "extractedMs": {
+      "n": 20,
+      "p50Ms": 16823.41283399996,
+      "p95Ms": 19785.798624999967,
+      "p99Ms": 21122.543125000026,
+      "maxMs": 21122.543125000026,
+      "meanMs": 17306.95711665,
+      "coefficientOfVariation": 0.09387750913064946
+    },
+    "apiMs": {
+      "n": 20,
+      "p50Ms": 7764.594374999986,
+      "p95Ms": 12273.293000000005,
+      "p99Ms": 23650.43291699997,
+      "maxMs": 23650.43291699997,
+      "meanMs": 9040.234637550002,
+      "coefficientOfVariation": 0.4017853519155669
+    }
+  },
+  "byViewport": {
+    "desktop": {
+      "latency": {
+        "n": 10,
+        "p50Ms": 25433.019415999996,
+        "p95Ms": 41013.379000000015,
+        "p99Ms": 41013.379000000015,
+        "maxMs": 41013.379000000015,
+        "meanMs": 26961.089020799995,
+        "coefficientOfVariation": 0.18043738963906264
+      },
+      "under30000Ms": 9
+    },
+    "mobile-360": {
+      "latency": {
+        "n": 10,
+        "p50Ms": 24996.591207999998,
+        "p95Ms": 29105.25350000005,
+        "p99Ms": 29105.25350000005,
+        "maxMs": 29105.25350000005,
+        "meanMs": 25733.294487600004,
+        "coefficientOfVariation": 0.08652475485351582
+      },
+      "under30000Ms": 10
+    }
+  },
+  "firstTen": {
+    "totalMs": {
+      "n": 10,
+      "p50Ms": 24412.959417000005,
+      "p95Ms": 26806.196082999988,
+      "p99Ms": 26806.196082999988,
+      "maxMs": 26806.196082999988,
+      "meanMs": 24866.851587499998,
+      "coefficientOfVariation": 0.047805400520278936
+    },
+    "extractedMs": {
+      "n": 10,
+      "p50Ms": 16437.85408399999,
+      "p95Ms": 19543.32716700001,
+      "p99Ms": 19543.32716700001,
+      "maxMs": 19543.32716700001,
+      "meanMs": 16594.770366700006,
+      "coefficientOfVariation": 0.07782430512042432
+    },
+    "apiMs": {
+      "n": 10,
+      "p50Ms": 7764.594374999986,
+      "p95Ms": 11231.424249999982,
+      "p99Ms": 11231.424249999982,
+      "maxMs": 11231.424249999982,
+      "meanMs": 8272.081220799993,
+      "coefficientOfVariation": 0.15114793334629922
+    }
+  },
+  "lastTen": {
+    "totalMs": {
+      "n": 10,
+      "p50Ms": 26371.346124999982,
+      "p95Ms": 41013.379000000015,
+      "p99Ms": 41013.379000000015,
+      "maxMs": 41013.379000000015,
+      "meanMs": 27827.5319209,
+      "coefficientOfVariation": 0.17450633932194615
+    },
+    "extractedMs": {
+      "n": 10,
+      "p50Ms": 17267.87566599995,
+      "p95Ms": 21122.543125000026,
+      "p99Ms": 21122.543125000026,
+      "maxMs": 21122.543125000026,
+      "meanMs": 18019.14386659999,
+      "coefficientOfVariation": 0.08943709800298334
+    },
+    "apiMs": {
+      "n": 10,
+      "p50Ms": 7687.051875000005,
+      "p95Ms": 23650.43291699997,
+      "p99Ms": 23650.43291699997,
+      "maxMs": 23650.43291699997,
+      "meanMs": 9808.388054300012,
+      "coefficientOfVariation": 0.4957381370182177
+    }
+  },
+  "limitations": [
+    "20 sequential samples on one M1 host do not establish population tails, concurrent-user capacity or long-term availability.",
+    "Mobile Chromium is viewport/touch emulation, not a physical phone.",
+    "Extraction interval includes local inspection and preparation; API interval includes request/response and final display, not provider generation alone.",
+    "Date counts varied between 28 and 29; source-valid citations do not prove exhaustive extraction.",
+    "All samples are retained, including the 41-second result."
+  ]
+}
