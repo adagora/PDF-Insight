@@ -11,6 +11,12 @@ within 30 seconds (p95 29.1 s, maximum 41.0 s). See [requirements and limits](do
 and [performance evidence](docs/performance/2026-10-06/README.md). Long-term reliability remains
 under observation.
 
+## Why it is hard
+
+- Every PDF is untrusted input, so text embedded in it can act as a prompt injection and must be treated as data, never as instructions.
+- Schema-valid output can still be invented, so every extracted amount and date is checked against the source text and unverifiable values are flagged.
+- Nothing sensitive may leave the browser unredacted, so inspection is fail-closed and any incomplete inspection blocks the whole request.
+
 ![PDF Insight — analysis of the 12-page test contract](docs/screenshots/result-desktop.png)
 
 ## How it works
